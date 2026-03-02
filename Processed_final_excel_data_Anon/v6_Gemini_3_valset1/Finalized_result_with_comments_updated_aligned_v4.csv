@@ -1,0 +1,877 @@
+Homework ID,Student ID,Question ID,TA_comments
+Homework1,student_10,1_5-2,
+Homework1,student_10,1_5-3,[U] (-0.01 pts)
+Homework1,student_10,2_4-6,[C] (-0.02 pts)
+Homework1,student_10,2_4-7,
+Homework1,student_10,2_5-1,
+Homework1,student_10,2_5-2,
+Homework1,student_10,3_2-1,[U] (-0.005 pts)
+Homework1,student_10,3_2-2,
+Homework1,student_10,3_2-6,
+Homework1,student_10,3_4-4,
+Homework1,student_10,3_6-1,
+Homework1,student_10,3_6-3,
+Homework1,student_11,1_5-2,[U] (-0.01 pts)
+Homework1,student_11,1_5-3,[U] (-0.01 pts)
+Homework1,student_11,2_4-6,"[C, M] (-0.01, -0.02 pts)"
+Homework1,student_11,2_4-7,[M] (-0.03 pts)
+Homework1,student_11,2_5-1,
+Homework1,student_11,2_5-2,
+Homework1,student_11,3_2-2,[E] (-0.005 pts)
+Homework1,student_11,3_2-6,
+Homework1,student_11,3_4-4,
+Homework1,student_11,3_6-1,
+Homework1,student_11,3_6-3,
+Homework1,student_14,1_5-2,
+Homework1,student_14,1_5-3,
+Homework1,student_14,2_4-6,[C] (-0.02 pts)
+Homework1,student_14,2_4-7,[C] (-0.03 pts)
+Homework1,student_14,2_5-1,
+Homework1,student_14,2_5-2,
+Homework1,student_14,3_2-1,"[E, M] (-0.03, -0.02 pts)"
+Homework1,student_14,3_2-2,[M] (-0.02 pts)
+Homework1,student_14,3_2-6,
+Homework1,student_14,3_4-4,
+Homework1,student_14,3_6-1,[NC] (-0.02 pts)
+Homework1,student_14,3_6-3,
+Homework1,student_19,1_5-2,
+Homework1,student_19,1_5-3,
+Homework1,student_19,2_4-6,
+Homework1,student_19,2_4-7,
+Homework1,student_19,2_5-1,
+Homework1,student_19,2_5-2,
+Homework1,student_19,3_2-1,
+Homework1,student_19,3_2-2,
+Homework1,student_19,3_2-6,[U] (-0.01 pts)
+Homework1,student_19,3_4-4,
+Homework1,student_19,3_6-1,
+Homework1,student_19,3_6-3,"[C, E, M, NC] (-0.04, -0.065, -0.065, -0.02 pts)"
+Homework1,student_20,1_5-2,[U] (-0.01 pts)
+Homework1,student_20,1_5-3,
+Homework1,student_20,2_4-6,
+Homework1,student_20,2_4-7,
+Homework1,student_20,2_5-1,
+Homework1,student_20,2_5-2,
+Homework1,student_20,3_2-1,[C] (-0.02 pts)
+Homework1,student_20,3_2-2,
+Homework1,student_20,3_2-6,
+Homework1,student_20,3_4-4,
+Homework1,student_20,3_6-1,
+Homework1,student_20,3_6-3,[C] (-0.01 pts)
+Homework1,student_22,1_5-2,
+Homework1,student_22,1_5-3,"[E, M, U] (-0.01, -0.01, -0.01 pts)"
+Homework1,student_22,2_4-6,[C] (-0.02 pts)
+Homework1,student_22,2_4-7,
+Homework1,student_22,2_5-1,
+Homework1,student_22,2_5-2,
+Homework1,student_22,3_2-1,
+Homework1,student_22,3_2-6,
+Homework1,student_22,3_4-4,
+Homework1,student_22,3_6-1,"[C, E] (-0.02, -0.02 pts)"
+Homework1,student_23,1_5-2,
+Homework1,student_23,1_5-3,
+Homework1,student_23,2_4-7,
+Homework1,student_23,2_5-1,
+Homework1,student_23,3_2-2,
+Homework1,student_23,3_2-6,
+Homework1,student_23,3_4-4,"[C, E] (-0.02, -0.02 pts)"
+Homework1,student_23,3_6-1,[U] (-0.005 pts)
+Homework1,student_23,3_6-3,"[E, M, NC] (-0.06, -0.02 -0.01 pts)"
+Homework1,student_30,1_5-2,[U] (-0.01 pts)
+Homework1,student_30,1_5-3,
+Homework1,student_30,2_4-6,
+Homework1,student_30,2_4-7,
+Homework1,student_30,2_5-1,[NC] (-0.01 pts)
+Homework1,student_30,2_5-2,
+Homework1,student_30,3_2-1,"[C, NC] (-0.02, -0.05 pts)"
+Homework1,student_30,3_2-2,
+Homework1,student_30,3_2-6,
+Homework1,student_30,3_4-4,
+Homework1,student_30,3_6-1,[E] (-0.01 pts)
+Homework1,student_30,3_6-3,
+Homework1,student_31,1_5-2,
+Homework1,student_31,1_5-3,
+Homework1,student_31,2_4-6,
+Homework1,student_31,2_4-7,
+Homework1,student_31,2_5-1,[NC] (-0.02 pts)
+Homework1,student_31,2_5-2,
+Homework1,student_31,3_2-1,
+Homework1,student_31,3_2-2,
+Homework1,student_31,3_2-6,
+Homework1,student_31,3_4-4,
+Homework1,student_31,3_6-1,
+Homework1,student_31,3_6-3,"[E, M, NC] (-0.02, -0.02, -0.01 pts)"
+Homework1,student_33,1_5-2,
+Homework1,student_33,1_5-3,[U] (-0.01 pts)
+Homework1,student_33,2_4-6,[C] (-0.02 pts)
+Homework1,student_33,2_4-7,
+Homework1,student_33,2_5-1,
+Homework1,student_33,2_5-2,
+Homework1,student_33,3_2-1,
+Homework1,student_33,3_2-2,
+Homework1,student_33,3_2-6,
+Homework1,student_33,3_4-4,
+Homework1,student_33,3_6-1,
+Homework1,student_33,3_6-3,"[E, M, NC] (-0.02, -0.02, -0.01 pts)"
+Homework1,student_34,1_5-2,
+Homework1,student_34,1_5-3,
+Homework1,student_34,2_4-6,
+Homework1,student_34,2_4-7,
+Homework1,student_34,2_5-1,
+Homework1,student_34,2_5-2,
+Homework1,student_34,3_2-1,
+Homework1,student_34,3_2-2,
+Homework1,student_34,3_2-6,
+Homework1,student_34,3_4-4,
+Homework1,student_34,3_6-1,
+Homework1,student_34,3_6-3,
+Homework1,student_43,1_5-2,[U] (-0.01 pts)
+Homework1,student_43,1_5-3,"[E, U] (-0.01, -0.01 pts)"
+Homework1,student_43,2_4-6,[C] (-0.05 pts)
+Homework1,student_43,2_4-7,[C] (-0.01 pts)
+Homework1,student_43,2_5-1,[U] (-0.005 pts)
+Homework1,student_43,2_5-2,[NC] (-0.1 pts)
+Homework1,student_43,3_2-1,
+Homework1,student_43,3_2-2,
+Homework1,student_43,3_2-6,
+Homework1,student_43,3_4-4,
+Homework1,student_43,3_6-1,
+Homework1,student_43,3_6-3,
+Homework1,student_44,1_5-2,
+Homework1,student_44,1_5-3,
+Homework1,student_44,2_4-6,
+Homework1,student_44,2_4-7,
+Homework1,student_44,2_5-1,
+Homework1,student_44,2_5-2,
+Homework1,student_44,3_2-1,
+Homework1,student_44,3_2-2,
+Homework1,student_44,3_2-6,
+Homework1,student_44,3_4-4,
+Homework1,student_44,3_6-1,
+Homework1,student_44,3_6-3,
+Homework1,student_7,1_5-2,
+Homework1,student_7,1_5-3,[U] (-0.01 pts)
+Homework1,student_7,2_4-6,
+Homework1,student_7,2_4-7,"[C, M] (-0.01, -0.02 pts)"
+Homework1,student_7,2_5-1,
+Homework1,student_7,2_5-2,
+Homework1,student_7,3_2-1,"[C, E, NC] (-0.02, -0.02, -0.05 pts)"
+Homework1,student_7,3_2-2,"[C, E] (-0.02, -0.02 pts)"
+Homework1,student_7,3_2-6,"[C, E] (-0.02, -0.01 pts)"
+Homework1,student_7,3_4-4,"[M, NC] (-0.03, -0.02 pts)"
+Homework1,student_7,3_6-1,"[C, E] (-0.02, -0.02 pts)"
+Homework1,student_7,3_6-3,"[M, NC] (-0.02, -0.02 pts)"
+Homework2,student_10,4_2-2,[U] (-0.01 pts)
+Homework2,student_10,4_2-5,[C] (-0.02 pts)
+Homework2,student_10,4_3-3,
+Homework2,student_10,4_4-1,
+Homework2,student_10,4_4-6,
+Homework2,student_10,4_5-2,
+Homework2,student_10,4_6-2,
+Homework2,student_10,4_7-1,
+Homework2,student_10,4_7-2,
+Homework2,student_10,4_7-6,
+Homework2,student_11,4_2-2,
+Homework2,student_11,4_2-5,
+Homework2,student_11,4_3-3,
+Homework2,student_11,4_4-1,
+Homework2,student_11,4_5-2,
+Homework2,student_11,4_7-1,
+Homework2,student_11,4_7-2,
+Homework2,student_11,4_7-6,
+Homework2,student_14,4_2-2,
+Homework2,student_14,4_2-5,
+Homework2,student_14,4_3-3,
+Homework2,student_14,4_4-1,
+Homework2,student_14,4_4-6,
+Homework2,student_14,4_5-2,
+Homework2,student_14,4_6-2,
+Homework2,student_14,4_7-1,
+Homework2,student_14,4_7-2,
+Homework2,student_14,4_7-6,
+Homework2,student_19,4_2-2,
+Homework2,student_19,4_2-5,
+Homework2,student_19,4_4-1,
+Homework2,student_19,4_4-6,
+Homework2,student_19,4_6-2,
+Homework2,student_19,4_7-1,
+Homework2,student_19,4_7-2,
+Homework2,student_19,4_7-6,[C] (-0.01 pts)
+Homework2,student_20,4_2-2,
+Homework2,student_20,4_2-5,
+Homework2,student_20,4_3-3,[E] (-0.01 pts)
+Homework2,student_20,4_4-1,
+Homework2,student_20,4_4-6,
+Homework2,student_20,4_5-2,
+Homework2,student_20,4_6-2,
+Homework2,student_20,4_7-1,[E] (-0.04 pts)
+Homework2,student_20,4_7-2,
+Homework2,student_20,4_7-6,
+Homework2,student_22,4_2-2,
+Homework2,student_22,4_2-5,
+Homework2,student_22,4_3-3,
+Homework2,student_22,4_4-1,
+Homework2,student_22,4_4-6,
+Homework2,student_22,4_5-2,
+Homework2,student_22,4_6-2,
+Homework2,student_22,4_7-1,
+Homework2,student_22,4_7-2,
+Homework2,student_22,4_7-6,
+Homework2,student_23,4_2-2,
+Homework2,student_23,4_2-5,
+Homework2,student_23,4_3-3,
+Homework2,student_23,4_4-1,
+Homework2,student_23,4_4-6,
+Homework2,student_23,4_5-2,
+Homework2,student_23,4_6-2,
+Homework2,student_23,4_7-1,
+Homework2,student_23,4_7-2,
+Homework2,student_23,4_7-6,"[C, U] (-0.03, -0.005 pts)"
+Homework2,student_30,4_2-2,
+Homework2,student_30,4_2-5,
+Homework2,student_30,4_3-3,
+Homework2,student_30,4_4-1,
+Homework2,student_30,4_4-6,
+Homework2,student_30,4_5-2,
+Homework2,student_30,4_6-2,
+Homework2,student_30,4_7-1,
+Homework2,student_30,4_7-2,
+Homework2,student_30,4_7-6,[C] (-0.01 pts)
+Homework2,student_31,4_2-2,
+Homework2,student_31,4_2-5,
+Homework2,student_31,4_3-3,
+Homework2,student_31,4_4-1,[C] (-0.005 pts)
+Homework2,student_31,4_4-6,
+Homework2,student_31,4_5-2,
+Homework2,student_31,4_6-2,
+Homework2,student_31,4_7-1,
+Homework2,student_31,4_7-2,
+Homework2,student_31,4_7-6,
+Homework2,student_33,4_2-2,
+Homework2,student_33,4_2-5,
+Homework2,student_33,4_3-3,
+Homework2,student_33,4_4-1,
+Homework2,student_33,4_4-6,
+Homework2,student_33,4_5-2,
+Homework2,student_33,4_6-2,
+Homework2,student_33,4_7-1,
+Homework2,student_33,4_7-2,
+Homework2,student_33,4_7-6,
+Homework2,student_34,4_4-1,
+Homework2,student_34,4_5-2,
+Homework2,student_34,4_6-2,
+Homework2,student_34,4_7-1,
+Homework2,student_34,4_7-2,
+Homework2,student_34,4_7-6,
+Homework2,student_36,4_2-2,
+Homework2,student_36,4_2-5,
+Homework2,student_36,4_3-3,
+Homework2,student_36,4_4-1,
+Homework2,student_36,4_4-6,
+Homework2,student_36,4_5-2,
+Homework2,student_36,4_6-2,
+Homework2,student_36,4_7-1,"[C, E] (-0.01, -0.02 pts)"
+Homework2,student_36,4_7-2,"[C, M] (-0.03, -0.02 pts)"
+Homework2,student_36,4_7-6,"[C, E, M] (-0.02, -0.02, -0.03 pts)"
+Homework2,student_43,4_2-2,
+Homework2,student_43,4_2-5,"[C, U] (-0.02, -0.01 pts)"
+Homework2,student_44,4_2-2,
+Homework2,student_44,4_2-5,
+Homework2,student_44,4_3-3,
+Homework2,student_44,4_4-1,
+Homework2,student_44,4_4-6,
+Homework2,student_44,4_6-2,
+Homework2,student_44,4_7-1,
+Homework2,student_44,4_7-2,
+Homework2,student_44,4_7-6,
+Homework2,student_7,4_2-2,"[C, E] (-0.03, -0.03 pts)"
+Homework2,student_7,4_2-5,"[C, E, NC] (-0.03, -0.03, -0.01 pts)"
+Homework2,student_7,4_3-3,"[C, E] (-0.03, -0.04 pts)"
+Homework2,student_7,4_4-1,
+Homework2,student_7,4_4-6,
+Homework2,student_7,4_5-2,
+Homework2,student_7,4_6-2,
+Homework2,student_7,4_7-1,
+Homework2,student_7,4_7-2,
+Homework4,student_10,6_3-2,
+Homework4,student_10,6_3-3,
+Homework4,student_10,6_4-2,
+Homework4,student_10,6_4-4,
+Homework4,student_10,6_4-5,"[C, E, M, NC] (-0.02, -0.04, -0.02, -0.01 pts)"
+Homework4,student_10,6_4-6,
+Homework4,student_11,6_3-2,
+Homework4,student_11,6_3-3,
+Homework4,student_11,6_4-1,
+Homework4,student_11,6_4-2,
+Homework4,student_11,6_4-5,[NC] (-0.01 pts)
+Homework4,student_11,6_4-6,
+Homework4,student_14,6_3-2,
+Homework4,student_14,6_3-3,
+Homework4,student_14,6_4-1,
+Homework4,student_14,6_4-2,
+Homework4,student_14,6_4-4,
+Homework4,student_14,6_4-5,[C] (-0.04 pts)
+Homework4,student_14,6_4-6,
+Homework4,student_17,6_3-2,
+Homework4,student_17,6_3-3,
+Homework4,student_17,6_4-1,
+Homework4,student_17,6_4-2,[U] (-0.01 pts)
+Homework4,student_17,6_4-4,
+Homework4,student_17,6_4-6,
+Homework4,student_19,6_3-2,
+Homework4,student_19,6_3-3,
+Homework4,student_19,6_4-1,
+Homework4,student_19,6_4-2,
+Homework4,student_19,6_4-4,
+Homework4,student_19,6_4-5,[C] (-0.04 pts)
+Homework4,student_19,6_4-6,
+Homework4,student_20,6_3-2,
+Homework4,student_20,6_3-3,
+Homework4,student_20,6_4-1,
+Homework4,student_20,6_4-2,
+Homework4,student_20,6_4-4,
+Homework4,student_20,6_4-5,[C] (-0.04 pts)
+Homework4,student_20,6_4-6,
+Homework4,student_22,6_3-2,[E] (-0.01 pts)
+Homework4,student_22,6_3-3,
+Homework4,student_22,6_4-1,
+Homework4,student_22,6_4-2,
+Homework4,student_22,6_4-4,
+Homework4,student_22,6_4-6,[C] (-0.02 pts)
+Homework4,student_23,6_3-2,[E] (-0.01 pts)
+Homework4,student_23,6_4-1,
+Homework4,student_23,6_4-2,
+Homework4,student_23,6_4-4,
+Homework4,student_23,6_4-5,[NC] (-0.05 pts)
+Homework4,student_29,6_3-2,
+Homework4,student_29,6_3-3,
+Homework4,student_29,6_4-1,
+Homework4,student_29,6_4-2,
+Homework4,student_29,6_4-4,
+Homework4,student_29,6_4-5,[C] (-0.02 pts)
+Homework4,student_29,6_4-6,
+Homework4,student_30,6_3-2,
+Homework4,student_30,6_3-3,
+Homework4,student_30,6_4-2,
+Homework4,student_30,6_4-4,[C] (-0.01 pts)
+Homework4,student_30,6_4-6,
+Homework4,student_31,6_3-2,
+Homework4,student_31,6_3-3,
+Homework4,student_31,6_4-1,
+Homework4,student_31,6_4-2,
+Homework4,student_31,6_4-4,
+Homework4,student_31,6_4-5,[C] (-0.02 pts)
+Homework4,student_31,6_4-6,
+Homework4,student_33,6_3-2,
+Homework4,student_33,6_3-3,
+Homework4,student_33,6_4-1,
+Homework4,student_33,6_4-2,
+Homework4,student_33,6_4-4,
+Homework4,student_33,6_4-5,
+Homework4,student_33,6_4-6,"[C, E, M] (-0.02, -0.02, -0.03 pts)"
+Homework4,student_34,6_3-3,
+Homework4,student_34,6_4-1,
+Homework4,student_34,6_4-2,
+Homework4,student_34,6_4-6,
+Homework4,student_36,6_3-2,
+Homework4,student_36,6_3-3,
+Homework4,student_36,6_4-1,
+Homework4,student_36,6_4-2,
+Homework4,student_36,6_4-4,
+Homework4,student_36,6_4-6,"[C, E] (-0.02, -0.02 pts)"
+Homework4,student_43,6_3-2,
+Homework4,student_43,6_3-3,
+Homework4,student_43,6_4-1,
+Homework4,student_43,6_4-6,
+Homework4,student_44,6_3-2,
+Homework4,student_44,6_3-3,
+Homework4,student_44,6_4-1,
+Homework4,student_44,6_4-2,[C] (-0.01 pts)
+Homework4,student_44,6_4-4,
+Homework4,student_44,6_4-5,
+Homework4,student_44,6_4-6,
+Homework4,student_7,6_3-2,"[C, E] (-0.02, -0.02 pts)"
+Homework4,student_7,6_3-3,
+Homework4,student_7,6_4-1,
+Homework4,student_7,6_4-2,
+Homework4,student_7,6_4-4,
+Homework4,student_7,6_4-5,[C] (-0.04 pts)
+Homework4,student_7,6_4-6,
+Homework5,student_10,7_2-2,
+Homework5,student_10,7_2-4,"[C, E, M] (-0.02, -0.02, -0.05 pts)"
+Homework5,student_10,7_3-2,[NC] (-0.02 pts)
+Homework5,student_10,7_4-1,
+Homework5,student_10,7_4-3,
+Homework5,student_10,7_5-4,[U] (-0.005 pts)
+Homework5,student_10,7_5-5,"[C, E, M] (-0.02, -0.02, -0.05 pts)"
+Homework5,student_10,7_6-2,"[C, U] (-0.03, -0.01 pts)"
+Homework5,student_10,7_7-2,
+Homework5,student_10,7_8-2,
+Homework5,student_11,7_2-2,
+Homework5,student_11,7_2-4,[U] (-0.005 pts)
+Homework5,student_11,7_3-2,
+Homework5,student_11,7_4-1,
+Homework5,student_11,7_4-3,
+Homework5,student_11,7_5-4,[U] (-0.005 pts)
+Homework5,student_11,7_5-5,"[C, NC, U] (-0.02, -0.02, -0.005 pts)"
+Homework5,student_11,7_6-2,
+Homework5,student_11,7_7-2,
+Homework5,student_11,7_8-2,
+Homework5,student_14,7_2-2,"[C, E, U] (-0.01, -0.01, -0.015 pts)"
+Homework5,student_14,7_2-4,"[C, E, M] (-0.02, -0.02, -0.03 pts)"
+Homework5,student_14,7_3-2,
+Homework5,student_14,7_4-1,[U] (-0.005 pts)
+Homework5,student_14,7_4-3,"[C, E, M] (-0.02, -0.02, -0.05 pts)"
+Homework5,student_14,7_5-4,"[C, M, U] (-0.02, -0.04, -0.01 pts)"
+Homework5,student_14,7_5-5,"[C, E, M, U] (-0.03, -0.04, -0.04, -0.005 pts)"
+Homework5,student_14,7_6-2,
+Homework5,student_14,7_7-2,[U] (-0.005 pts)
+Homework5,student_14,7_8-2,
+Homework5,student_17,7_2-2,
+Homework5,student_17,7_2-4,"[C, U] (-0.02, -0.025 pts)"
+Homework5,student_17,7_3-2,
+Homework5,student_17,7_4-1,
+Homework5,student_17,7_4-3,"[C, U] (-0.02, -0.01 pts)"
+Homework5,student_17,7_5-4,[U] (-0.005 pts)
+Homework5,student_17,7_5-5,[U] (-0.01 pts)
+Homework5,student_17,7_6-2,[C] (-0.01 pts)
+Homework5,student_17,7_7-2,
+Homework5,student_17,7_8-2,
+Homework5,student_19,7_2-2,[ C] (-0.01 pts)
+Homework5,student_19,7_2-4,"[C, E, M] (-0.02, -0.02, -0.03 pts)"
+Homework5,student_19,7_3-2,"[C, U] (-0.005, -0.005 pts)"
+Homework5,student_19,7_4-1,
+Homework5,student_19,7_4-3,
+Homework5,student_19,7_5-4,
+Homework5,student_19,7_5-5,[C] (-0.02 pts)
+Homework5,student_19,7_6-2,
+Homework5,student_19,7_7-2,
+Homework5,student_19,7_8-2,
+Homework5,student_20,7_2-2,
+Homework5,student_20,7_2-4,
+Homework5,student_20,7_3-2,[E] (-0.005 pts)
+Homework5,student_20,7_4-1,
+Homework5,student_20,7_4-3,
+Homework5,student_20,7_5-4,[U] (-0.005 pts)
+Homework5,student_20,7_5-5,
+Homework5,student_20,7_6-2,
+Homework5,student_20,7_7-2,
+Homework5,student_22,7_2-2,
+Homework5,student_22,7_2-4,"[C, E, M, NC] (-0.02, -0.02, -0.03, -0.01 pts)"
+Homework5,student_22,7_3-2,"[C, E, M, NC] (-0.03, -0.05, -0.02, -0.02 pts)"
+Homework5,student_22,7_4-1,
+Homework5,student_22,7_4-3,"[C, E, M] (-0.02, -0.02, -0.05 pts)"
+Homework5,student_22,7_5-4,
+Homework5,student_22,7_5-5,[C] (-0.02 pts)
+Homework5,student_22,7_6-2,
+Homework5,student_22,7_7-2,
+Homework5,student_22,7_8-2,
+Homework5,student_23,7_2-2,
+Homework5,student_23,7_2-4,
+Homework5,student_23,7_3-2,
+Homework5,student_23,7_4-1,[C] (-0.02 pts)
+Homework5,student_23,7_4-3,[C] (-0.02 pts)
+Homework5,student_23,7_5-5,"[C, E, U] (-0.02, -0.02, -0.01 pts)"
+Homework5,student_23,7_6-2,
+Homework5,student_23,7_7-2,
+Homework5,student_23,7_8-2,
+Homework5,student_30,7_2-2,
+Homework5,student_30,7_2-4,"[C, E, M] (-0.02, -0.02, -0.05 pts)"
+Homework5,student_30,7_3-2,
+Homework5,student_30,7_4-1,
+Homework5,student_30,7_4-3,
+Homework5,student_30,7_5-4,
+Homework5,student_30,7_5-5,"[C, E, M] (-0.02, -0.02, -0.05 pts)"
+Homework5,student_30,7_6-2,
+Homework5,student_30,7_7-2,
+Homework5,student_30,7_8-2,
+Homework5,student_31,7_2-2,
+Homework5,student_31,7_2-4,
+Homework5,student_31,7_3-2,[E] (-0.005 pts)
+Homework5,student_31,7_4-1,
+Homework5,student_31,7_4-3,
+Homework5,student_31,7_5-4,
+Homework5,student_31,7_5-5,
+Homework5,student_31,7_6-2,
+Homework5,student_31,7_8-2,
+Homework5,student_34,7_2-2,
+Homework5,student_34,7_3-2,
+Homework5,student_34,7_4-1,
+Homework5,student_34,7_5-4,
+Homework5,student_34,7_5-5,
+Homework5,student_34,7_6-2,
+Homework5,student_34,7_7-2,
+Homework5,student_36,7_2-2,
+Homework5,student_36,7_2-4,
+Homework5,student_36,7_3-2,
+Homework5,student_36,7_4-1,
+Homework5,student_36,7_4-3,
+Homework5,student_36,7_5-4,
+Homework5,student_36,7_5-5,
+Homework5,student_36,7_6-2,[U] (-0.01 pts)
+Homework5,student_36,7_7-2,
+Homework5,student_36,7_8-2,
+Homework5,student_43,7_2-2,
+Homework5,student_43,7_2-4,"[C, E, M, NC, U] (-0.05, -0.075, -0.075, -0.025, -0.025 pts)"
+Homework5,student_43,7_3-2,[NC] (-0.02 pts)
+Homework5,student_43,7_4-1,"[C, E, M, NC] (-0.02, -0.02, -0.02, -0.025 pts)"
+Homework5,student_43,7_5-5,
+Homework5,student_43,7_6-2,[U] (-0.005 pts)
+Homework5,student_43,7_7-2,
+Homework5,student_43,7_8-2,[NC] (-0.01 pts)
+Homework5,student_44,7_2-2,[U] (-0.01 pts)
+Homework5,student_44,7_2-4,
+Homework5,student_44,7_3-2,"[C, U] (-0.01, -0.005 pts)"
+Homework5,student_44,7_4-1,
+Homework5,student_44,7_4-3,
+Homework5,student_44,7_5-4,
+Homework5,student_44,7_5-5,
+Homework5,student_44,7_6-2,[U] (-0.005 pts)
+Homework5,student_44,7_7-2,
+Homework5,student_44,7_8-2,
+Homework5,student_7,7_2-2,
+Homework5,student_7,7_3-2,"[C, E] (-0.01, -0.01 pts)"
+Homework5,student_7,7_4-1,[U] (-0.01 pts)
+Homework5,student_7,7_4-3,[C] (-0.02 pts)
+Homework5,student_7,7_5-4,
+Homework5,student_7,7_5-5,"[C, E, M, U] (-0.03, -0.04, -0.04, -0.005 pts)"
+Homework5,student_7,7_6-2,
+Homework5,student_7,7_7-2,[U] (-0.01 pts)
+Homework5,student_7,7_8-2,[C] (-0.02 pts)
+Homework6,student_10,8_3-1,"[C, E, M, NC, U] (-0.055, -0.083, -0.083, -0.028, -0.028 pts)"
+Homework6,student_10,8_3-2,
+Homework6,student_10,8_3-4,
+Homework6,student_10,8_3-5,
+Homework6,student_10,8_3-9,
+Homework6,student_10,8_4-1,
+Homework6,student_11,8_3-1,
+Homework6,student_11,8_3-10,
+Homework6,student_11,8_3-2,
+Homework6,student_11,8_3-4,
+Homework6,student_11,8_3-5,
+Homework6,student_11,8_3-9,[U] (-0.01 pts)
+Homework6,student_11,8_4-1,
+Homework6,student_11,8_7-5,[E] (-0.02 pts)
+Homework6,student_14,8_3-1,[U] (-0.01 pts)
+Homework6,student_14,8_3-10,
+Homework6,student_14,8_3-2,[E] (-0.01 pts)
+Homework6,student_14,8_3-4,
+Homework6,student_14,8_3-5,[U] (-0.01 pts)
+Homework6,student_14,8_3-9,
+Homework6,student_14,8_4-1,[C] (-0.01 pts)
+Homework6,student_14,8_7-3,[U] (-0.01 pts)
+Homework6,student_14,8_7-5,
+Homework6,student_17,8_3-1,"[C, E] (-0.01, -0.01 pts)"
+Homework6,student_17,8_3-10,[C] (-0.02 pts)
+Homework6,student_17,8_3-2,
+Homework6,student_17,8_3-4,
+Homework6,student_17,8_3-5,[C] (-0.02 pts)
+Homework6,student_17,8_3-9,
+Homework6,student_17,8_4-1,"[C, E] (-0.01, -0.01 pts)"
+Homework6,student_17,8_7-3,
+Homework6,student_17,8_7-5,[C] (-0.01 pts)
+Homework6,student_18,8_3-1,
+Homework6,student_18,8_3-2,
+Homework6,student_18,8_3-4,
+Homework6,student_18,8_3-5,
+Homework6,student_18,8_3-9,
+Homework6,student_18,8_7-3,
+Homework6,student_18,8_7-5,[E] (-0.02 pts)
+Homework6,student_19,8_3-1,
+Homework6,student_19,8_3-10,
+Homework6,student_19,8_3-2,
+Homework6,student_19,8_3-4,
+Homework6,student_19,8_3-5,
+Homework6,student_19,8_3-9,
+Homework6,student_19,8_4-1,
+Homework6,student_19,8_7-3,
+Homework6,student_19,8_7-5,
+Homework6,student_20,8_3-2,
+Homework6,student_20,8_3-4,[E] (-0.01 pts)
+Homework6,student_20,8_7-5,[E] (-0.01 pts)
+Homework6,student_22,8_3-1,
+Homework6,student_22,8_3-10,
+Homework6,student_22,8_3-2,
+Homework6,student_22,8_3-4,[E] (-0.01 pts)
+Homework6,student_22,8_3-5,
+Homework6,student_22,8_3-9,[C] (-0.01 pts)
+Homework6,student_22,8_4-1,[E] (-0.02 pts)
+Homework6,student_22,8_7-3,"[C, E, M] (-0.03, -0.03, -0.03 pts)"
+Homework6,student_22,8_7-5,[E] (-0.02 pts)
+Homework6,student_23,8_3-1,
+Homework6,student_23,8_3-10,
+Homework6,student_23,8_3-2,
+Homework6,student_23,8_3-4,
+Homework6,student_23,8_3-5,[E] (-0.01 pts)
+Homework6,student_23,8_3-9,
+Homework6,student_23,8_4-1,
+Homework6,student_23,8_7-3,
+Homework6,student_23,8_7-5,[E] (-0.01 pts)
+Homework6,student_29,8_3-1,
+Homework6,student_29,8_3-10,
+Homework6,student_29,8_3-2,
+Homework6,student_29,8_3-4,
+Homework6,student_29,8_3-5,
+Homework6,student_29,8_3-9,
+Homework6,student_29,8_4-1,
+Homework6,student_29,8_7-3,
+Homework6,student_7,8_3-1,
+Homework6,student_7,8_3-10,
+Homework6,student_7,8_3-2,
+Homework6,student_7,8_3-5,
+Homework6,student_7,8_4-1,[E] (-0.02 pts)
+Homework6,student_7,8_7-5,
+Homework7,student_10,9_2-1,
+Homework7,student_10,9_3-3,
+Homework7,student_10,9_4-1,
+Homework7,student_10,9_4-2,
+Homework7,student_10,9_5-1,
+Homework7,student_11,9_2-1,
+Homework7,student_11,9_3-3,[C] (-0.01 pts)
+Homework7,student_11,9_4-1,
+Homework7,student_11,9_4-2,
+Homework7,student_11,9_5-1,
+Homework7,student_11,9_6-1,
+Homework7,student_11,9_7-2,"[C, E] (-0.03, -0.03 pts)"
+Homework7,student_11,9_8-2,
+Homework7,student_14,9_3-3,"[C, E] (-0.02, -0.02 pts)"
+Homework7,student_14,9_4-1,
+Homework7,student_14,9_4-2,"[C, U] (-0.01, -0.01 pts)"
+Homework7,student_14,9_5-1,
+Homework7,student_14,9_8-2,
+Homework7,student_17,9_2-1,[NC] (-0.02 pts)
+Homework7,student_17,9_3-3,
+Homework7,student_17,9_4-1,
+Homework7,student_17,9_4-2,"[C, U] (-0.02, -0.01 pts)"
+Homework7,student_17,9_5-1,
+Homework7,student_17,9_6-1,
+Homework7,student_17,9_7-2,"[C, E] (-0.03, -0.03 pts)"
+Homework7,student_18,9_2-1,
+Homework7,student_18,9_3-3,
+Homework7,student_18,9_5-1,
+Homework7,student_19,9_2-1,[C] (-0.01 pts)
+Homework7,student_19,9_3-3,
+Homework7,student_19,9_5-1,
+Homework7,student_19,9_6-1,
+Homework7,student_20,9_2-1,[NC] (-0.02 pts)
+Homework7,student_20,9_3-3,
+Homework7,student_20,9_4-1,
+Homework7,student_20,9_4-2,
+Homework7,student_22,9_2-1,
+Homework7,student_22,9_3-3,[C] (-0.005 pts)
+Homework7,student_22,9_4-1,
+Homework7,student_22,9_4-2,"[C, U] (-0.02, -0.01 pts)"
+Homework7,student_22,9_5-1,"[C, NC] (-0.03, -0.02 pts)"
+Homework7,student_22,9_6-1,"[C, U] (-0.03, -0.01 pts)"
+Homework7,student_22,9_7-2,"[E, M, NC] (-0.03, -0.02, -0.1 pts)"
+Homework7,student_23,9_2-1,
+Homework7,student_23,9_3-3,[C] (-0.01 pts)
+Homework7,student_23,9_4-1,[U] (-0.01 pts)
+Homework7,student_23,9_4-2,
+Homework7,student_23,9_5-1,
+Homework7,student_23,9_6-1,
+Homework7,student_23,9_7-2,[E] (-0.02 pts)
+Homework7,student_23,9_8-2,
+Homework7,student_29,9_2-1,
+Homework7,student_29,9_3-3,
+Homework7,student_29,9_4-1,
+Homework7,student_29,9_4-2,
+Homework7,student_29,9_5-1,
+Homework7,student_29,9_6-1,
+Homework7,student_29,9_7-2,[C] (-0.01 pts)
+Homework7,student_29,9_8-2,
+Homework7,student_30,9_2-1,[C] (-0.01 pts)
+Homework7,student_30,9_3-3,
+Homework7,student_30,9_4-1,
+Homework7,student_30,9_4-2,
+Homework7,student_30,9_5-1,
+Homework7,student_30,9_6-1,
+Homework7,student_31,9_2-1,
+Homework7,student_31,9_3-3,
+Homework7,student_31,9_4-1,
+Homework7,student_31,9_4-2,
+Homework7,student_31,9_5-1,[E] (-0.01 pts)
+Homework7,student_31,9_6-1,
+Homework7,student_31,9_7-2,"[C, E] (-0.03, -0.03 pts)"
+Homework7,student_31,9_8-2,
+Homework7,student_33,9_2-1,[C] (-0.01 pts)
+Homework7,student_33,9_3-3,[C] (-0.01 pts)
+Homework7,student_33,9_4-1,
+Homework7,student_33,9_4-2,
+Homework7,student_33,9_5-1,
+Homework7,student_33,9_6-1,[E] (-0.01 pts)
+Homework7,student_33,9_7-2,"[C, E] (-0.03, -0.03 pts)"
+Homework7,student_33,9_8-2,
+Homework7,student_34,9_2-1,"[C, NC] (-0.02, -0.02 pts)"
+Homework7,student_36,9_2-1,
+Homework7,student_36,9_3-3,"[C, E] (-0.01, -0.01 pts)"
+Homework7,student_36,9_4-1,
+Homework7,student_36,9_4-2,
+Homework7,student_36,9_5-1,
+Homework7,student_36,9_6-1,
+Homework7,student_36,9_7-2,"[C, E] (-0.03, -0.03 pts)"
+Homework7,student_36,9_8-2,
+Homework7,student_43,9_2-1,
+Homework7,student_43,9_3-3,
+Homework7,student_43,9_4-1,
+Homework7,student_43,9_4-2,
+Homework7,student_43,9_6-1,
+Homework7,student_43,9_7-2,[C] (-0.02 pts)
+Homework7,student_44,9_2-1,
+Homework7,student_44,9_3-3,
+Homework7,student_44,9_4-1,
+Homework7,student_44,9_4-2,
+Homework7,student_44,9_6-1,
+Homework7,student_44,9_7-2,
+Homework7,student_44,9_8-2,
+Homework7,student_7,9_2-1,[C] (-0.01 pts)
+Homework7,student_7,9_3-3,[C] (-0.005 pts)
+Homework7,student_7,9_4-1,
+Homework7,student_7,9_4-2,
+Homework7,student_7,9_5-1,
+Homework7,student_7,9_6-1,
+Homework7,student_7,9_7-2,"[C, U] (-0.02, -0.01 pts)"
+Homework7,student_7,9_8-2,
+Homework8,student_10,10_10-4,[C] (-0.001 pts)
+Homework8,student_10,10_3-2,[E] (-0.01 pts)
+Homework8,student_10,10_3-3,
+Homework8,student_10,10_4-1,[U] (-0.02 pts)
+Homework8,student_10,10_4-6,[C] (-0.01 pts)
+Homework8,student_10,10_6-1,
+Homework8,student_10,10_6-4,[C] (-0.005 pts)
+Homework8,student_10,10_7-6,
+Homework8,student_10,10_8-1,
+Homework8,student_11,10_10-4,[C] (-0.01 pts)
+Homework8,student_11,10_3-2,[C] (-0.02 pts)
+Homework8,student_11,10_3-3,
+Homework8,student_11,10_4-1,
+Homework8,student_11,10_4-6,
+Homework8,student_11,10_6-4,
+Homework8,student_11,10_7-1,
+Homework8,student_14,10_10-4,"[C, E] (-0.01, -0.01 pts)"
+Homework8,student_14,10_3-2,[C] (-0.01 pts)
+Homework8,student_14,10_3-3,
+Homework8,student_14,10_4-6,[U] (-0.005 pts)
+Homework8,student_14,10_7-1,[C] (-0.03 pts)
+Homework8,student_14,10_7-6,[C] (-0.01 pts)
+Homework8,student_14,10_8-1,
+Homework8,student_14,10_8-6,[C] (-0.01 pts)
+Homework8,student_17,10_10-4,
+Homework8,student_17,10_4-1,[U] (-0.005 pts)
+Homework8,student_17,10_4-6,[C] (-0.01 pts)
+Homework8,student_17,10_6-1,"[C, E] (-0.02, -0.04 pts)"
+Homework8,student_17,10_6-4,[C] (-0.04 pts)
+Homework8,student_17,10_7-6,
+Homework8,student_17,10_8-1,[C] (-0.02 pts)
+Homework8,student_18,10_10-4,[C] (-0.01 pts)
+Homework8,student_18,10_3-2,
+Homework8,student_18,10_3-3,
+Homework8,student_18,10_4-1,
+Homework8,student_18,10_4-6,[C] (-0.01 pts)
+Homework8,student_18,10_6-4,[C] (-0.01 pts)
+Homework8,student_18,10_7-6,
+Homework8,student_18,10_8-1,
+Homework8,student_19,10_10-4,"[C, E] (-0.01, -0.01 pts)"
+Homework8,student_19,10_3-2,
+Homework8,student_19,10_3-3,
+Homework8,student_19,10_4-1,
+Homework8,student_19,10_4-6,
+Homework8,student_19,10_6-4,
+Homework8,student_19,10_7-6,[C] (-0.02 pts)
+Homework8,student_19,10_8-1,
+Homework8,student_20,10_10-4,
+Homework8,student_20,10_3-2,[U] (-0.005 pts)
+Homework8,student_20,10_3-3,[U] (-0.005 pts)
+Homework8,student_20,10_4-1,
+Homework8,student_20,10_4-6,[C] (-0.01 pts)
+Homework8,student_20,10_6-1,
+Homework8,student_20,10_6-4,
+Homework8,student_20,10_7-1,
+Homework8,student_20,10_7-6,
+Homework8,student_20,10_8-1,
+Homework8,student_22,10_10-4,[C] (-0.01 pts)
+Homework8,student_22,10_3-2,[U] (-0.005 pts)
+Homework8,student_22,10_3-3,"[C, M, E] (-0.06, -0.02, -0.01 pts)"
+Homework8,student_22,10_4-1,"[NC, U] (-0.01, -0.1 pts)"
+Homework8,student_22,10_4-6,[C] (-0.02 pts)
+Homework8,student_22,10_6-1,"[C, E, M] (-0.02, -0.02, -0.02 pts)"
+Homework8,student_22,10_6-4,"[C, E] (-0.03, -0.02 pts)"
+Homework8,student_22,10_7-6,[ C] ( -0.02 pts)
+Homework8,student_22,10_8-1,[ C] (-0.01 pts)
+Homework8,student_29,10_10-4,
+Homework8,student_29,10_3-2,[C] (-0.01 pts)
+Homework8,student_29,10_3-3,
+Homework8,student_29,10_4-1,
+Homework8,student_29,10_4-6,
+Homework8,student_29,10_6-1,
+Homework8,student_29,10_6-4,
+Homework8,student_29,10_7-1,
+Homework8,student_29,10_7-6,[C] (-0.02 pts)
+Homework8,student_29,10_8-1,
+Homework8,student_29,10_8-6,
+Homework8,student_30,10_10-4,
+Homework8,student_30,10_3-2,[U] (-0.005 pts)
+Homework8,student_30,10_3-3,[U] (-0.01 pts)
+Homework8,student_30,10_4-1,
+Homework8,student_30,10_4-6,
+Homework8,student_30,10_6-4,
+Homework8,student_30,10_7-6,
+Homework8,student_31,10_10-4,[C] (-0.01 pts)
+Homework8,student_31,10_3-2,
+Homework8,student_31,10_3-3,
+Homework8,student_31,10_4-1,[C] (-0.01 pts)
+Homework8,student_31,10_4-6,
+Homework8,student_31,10_6-4,[C] (-0.01 pts)
+Homework8,student_31,10_7-1,
+Homework8,student_31,10_7-6,
+Homework8,student_31,10_8-1,
+Homework8,student_33,10_10-4,[C] (-0.01 pts)
+Homework8,student_33,10_3-2,
+Homework8,student_33,10_3-3,[E] (-0.005 pts)
+Homework8,student_33,10_4-1,
+Homework8,student_33,10_6-4,
+Homework8,student_33,10_7-1,
+Homework8,student_33,10_7-6,
+Homework8,student_34,10_10-4,
+Homework8,student_34,10_3-2,
+Homework8,student_34,10_3-3,
+Homework8,student_34,10_7-6,[C] ( -0.01 pts)
+Homework8,student_36,10_10-4,[C] (-0.01 pts)
+Homework8,student_36,10_3-2,[C] (-0.02 pts)
+Homework8,student_36,10_3-3,
+Homework8,student_36,10_4-1,[U] (-0.005 pts)
+Homework8,student_36,10_4-6,
+Homework8,student_36,10_6-4,[C] (-0.01 pts)
+Homework8,student_36,10_7-1,
+Homework8,student_36,10_7-6,"[E, C] (-0.01, -0.01 pts)"
+Homework8,student_36,10_8-1,[C] (-0.01 pts)
+Homework8,student_36,10_8-6,
+Homework8,student_43,10_10-4,[C] (-0.01 pts)
+Homework8,student_43,10_3-2,"[C, E, NC] (-0.02, -0.01, -0.01 pts)"
+Homework8,student_43,10_3-3,
+Homework8,student_43,10_4-1,
+Homework8,student_43,10_4-6,
+Homework8,student_43,10_6-4,[U] (-0.01 pts)
+Homework8,student_43,10_8-1,[C] (-0.01 pts)
+Homework8,student_44,10_10-4,"[C, U] (-0.01, -0.005 pts)"
+Homework8,student_44,10_3-2,
+Homework8,student_44,10_3-3,
+Homework8,student_44,10_4-1,
+Homework8,student_44,10_4-6,[C] (-0.01 pts)
+Homework8,student_44,10_6-1,"[C, U] (-0.02, -0.005 pts)"
+Homework8,student_44,10_6-4,
+Homework8,student_44,10_7-1,
+Homework8,student_44,10_7-6,[ C] (-0.02 pts)
+Homework8,student_44,10_8-1,
+Homework8,student_44,10_8-6,[ C] (-0.02 pts)
+Homework8,student_7,10_10-4,
+Homework8,student_7,10_3-2,
+Homework8,student_7,10_3-3,
+Homework8,student_7,10_4-1,[U] (-0.02 pts)
+Homework8,student_7,10_4-6,
+Homework8,student_7,10_6-1,
+Homework8,student_7,10_6-4,[C] (-0.03 pts)
+Homework8,student_7,10_7-1,[E] (-0.02 pts)
+Homework8,student_7,10_7-6,
+Homework8,student_7,10_8-1,
+Homework8,student_7,10_8-6,

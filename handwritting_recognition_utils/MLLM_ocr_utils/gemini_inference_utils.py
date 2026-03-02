@@ -1,0 +1,142 @@
+import os
+import google.generativeai as genai
+import PIL.Image
+from pathlib import Path
+
+def load_prompt_template_from_file(prompt_file_path: str = None) -> str:
+    """
+    Load the prompt content from a local file.
+    """
+    try:
+        with open(prompt_file_path, 'r', encoding='utf-8') as f:
+            return f.read().strip()
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Prompt file not found at: {prompt_file_path}")
+    except Exception as e:
+        raise Exception(f"Error reading prompt file: {e}")
+
+def build_full_prompt(prompt_file_path: str, official_database_path: str, source_image_path: str) -> str:
+    # 1. Load the prompt template
+    prompt_template = load_prompt_template_from_file(prompt_file_path)
+    
+    # 2. Prepare image resources
+    source_img_pil = PIL.Image.open(source_image_path)
+    
+    # 3. Parse the Question ID and retrieve context from the database
+    # Logic: filename -> image_id -> database folder
+    image_file_name = os.path.basename(source_image_path)
+    
+    # Assuming filename format allows extraction of the ID via the first segment before an underscore.
+    # Note: This logic follows the original splitting method. 
+    # If the format changes, this logic needs to be updated.
+    try:
+        image_id = "P" + image_file_name.split(".png")[0].split("_")[0]
+    except IndexError:
+        # If the filename format does not match expectations, default to "Unknown" or handle error
+        image_id = "Unknown"
+
+    datasource = os.path.join(official_database_path, image_id)
+    
+    # 3.1 Read the problem statement text (problem_statement.txt)
+    problem_statement_path = os.path.join(datasource, "problem_statement.txt")
+    if os.path.exists(problem_statement_path):
+        with open(problem_statement_path, "r", encoding="utf-8") as f:
+            problem_statement = f.read()
+    else:
+        # If the problem statement is not found, use an empty string or placeholder to prevent errors
+        problem_statement = "" 
+
+    # 3.2 Read original problem images (image0.png, image1.png...)
+    problem_statement_image_list = []
+    idx = 0
+    while True:
+        img_path = os.path.join(datasource, f"image{idx}.png")
+        if os.path.exists(img_path):
+            try:
+                problem_img = PIL.Image.open(img_path)
+                problem_statement_image_list.append(problem_img)
+                idx += 1
+            except Exception:
+                break
+        else:
+            break
+            
+    # 4. Assemble the final Prompt List
+    # Part 1: Text Prompt (replace placeholders)
+    formatted_prompt_text = prompt_template.replace("{problem_statement}", problem_statement)
+    
+    current_prompt = [formatted_prompt_text]
+    
+    # Part 2: Original problem images
+    current_prompt.extend(problem_statement_image_list)
+    
+    # Part 3: Student handwriting image
+    current_prompt.append(source_img_pil)
+
+    return current_prompt
+
+def build_full_prompt_wo_problem_statement(prompt_file_path: str, source_image_path: str) -> list:
+    """
+    Constructs a prompt list containing ONLY the text prompt and the student's image.
+    This version bypasses the lookup of the official problem statement and official images
+    (useful for copyright-restricted datasets).
+
+    Args:
+        prompt_file_path (str): Path to the prompt template file.
+        source_image_path (str): Path to the student's handwriting image.
+
+    Returns:
+        list: A list containing [prompt_text, source_image_pil] for the Gemini API.
+    """
+    # 1. Load the prompt template
+    prompt_template = load_prompt_template_from_file(prompt_file_path)
+    
+    # 2. Prepare image resources
+    source_img_pil = PIL.Image.open(source_image_path)
+
+    # 3. Assemble the final Prompt List
+    # Even though the new prompt text shouldn't have the {problem_statement} placeholder,
+    # we perform a safe replacement just in case the wrong text file is loaded.
+    formatted_prompt_text = prompt_template.replace("{problem_statement}", "")
+    
+    current_prompt = [formatted_prompt_text]
+    
+    # 4. Append only the student handwriting image
+    current_prompt.append(source_img_pil)
+
+    return current_prompt
+
+def get_gemini_response(
+    source_image_path: str,
+    model_name: str,
+    prompt_file_path: str,
+    official_database_path: str
+) -> str:
+    """
+    Constructs the prompt content (text + database problem images + student homework image)
+    and calls the Gemini API to perform inference.
+
+    Args:
+        source_image_path (str): Path to the student's handwriting image.
+        model_name (str): Gemini model name (e.g., 'gemini-1.5-pro').
+        prompt_file_path (str): Path to the prompt template file.
+        official_database_path (str): Path to the official problem database (used to look up problem statements and original images).
+
+    Returns:
+        str: The Markdown text generated by the model.
+    """
+    if official_database_path:
+        current_prompt = build_full_prompt(prompt_file_path, official_database_path, source_image_path)
+    else:
+        current_prompt = build_full_prompt_wo_problem_statement(prompt_file_path, source_image_path)
+    
+    # 2. Call the API
+    # 2.1. Prepare the model
+    model = genai.GenerativeModel(model_name)
+    # 2.2. Set temperature to 0.0 for deterministic output
+    response = model.generate_content(current_prompt, generation_config={'temperature': 0.0})
+    
+    if not response.text:
+        raise ValueError("Gemini API returned empty text content.")
+        
+    return response.text

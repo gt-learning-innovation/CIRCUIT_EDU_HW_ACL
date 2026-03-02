@@ -1,0 +1,99 @@
+This is the official code for our paper "EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions".
+
+Quick Start:
+
+I. Project Structure
+
+"Screenshot_output_anon": This is our anonymized student handwritten works for a undergraduate level circuit analysis course at a large, public, research-intensive institution in the Southeast United States during the Spring 2025 semester. To be specific, the structure of the directory is as follows:
+
+1. Student Handwritten Works Data
+
+Screenshot_output_anon/Homework_ID/Student_ID/Question_ID.png
+
+For example, the student 2's handwritten solution for Homework 1, Question 1.5-2 can be found in the directory:
+
+Screenshot_output_anon/Homework1/student_2/1.5-2.png
+
+Some times, the student may have multiple images for one question. In this case, we will have the following structure:
+
+Screenshot_output_anon/Homework1/student_2/3.6-1_(1).png
+Screenshot_output_anon/Homework1/student_2/3.6-1_(2).png
+
+Where the (1) and (2) are the image index of the student's handwritten solution for this question (i.e., 3.6-1 here) in order.
+
+2. Dataset Split
+
+In our paper, we split the dataset into observation set and test set, and each subset's information is stored in the following files:
+
+Screenshot_output_anon/set_splitting
+
+where each csv file (e.g., obsetf_involved_data.csv) contains the information of the student works (i.e., Homework ID, Student ID, Question ID) in the corresponding subset.
+
+3. Grading Report & Rubrics
+
+Here we provide the expert evaluated grading reports for each student work in observation set and test set. The structure of the directory is as follows:
+
+Screenshot_output_anon/manually_checked_TA_label
+
+where obset.xlsx and valset.csv are the grading reports for the observation set and test set, respectively.
+
+And rubrics for each question can be found in the directory:
+
+Screenshot_output_anon/rubric_outputs
+
+But unfortunately, we cannot provide the problem statements for each question due to the copyright of the course materials (James A Svoboda and Richard C Dorf. 2013. Introduction to Electric Circuits (9th Edition). John Wiley & Sons.). Readers interested in the problem statements can refer to the course materials themselves based on the index of involved questions (e.g., P1.5-2, P3.6-1, etc.)
+
+4. Expert rectified recognition results
+
+This serves as the ground truth for the recognition results in the observation set, which you can find in the directory: 
+
+Rectified_recognized_markdown_done_Anon/Final_4_LLM_judge
+
+where you can find the rectified recognition results for each student work (e.g, Homework1, Student41, Question 1.5-2) in the directory:
+
+Rectified_recognized_markdown_done_Anon/Final_4_LLM_judge/Homework_collected_database_trial_Homework1_student_41/models/gemini-2.5-pro/Compare/1.5-2_markdown.md
+
+All samples in this directory are the expert rectified recognition results via Gemini 2.5 Pro model for the observation set if experts find any errors in one recognized student work. And if you can find one question covered in the observation set (i.e., find the Homework ID, Student ID, Question ID in "Screenshot_output_anon/set_splitting/obsetf_involved_data.csv") while you cannot find it in this directory, it means the expert did not rectify the recognition results for this question!
+
+II. Run student-handwritten recognition pipeline
+Based on the data mentioned in Section I, we provide a built recognition pipeline to use MLLMs to recognize the student-handwritten works. You can run the pipeline by following the steps below:
+
+1. Prepare your MLLM model and the system prompt to have the MLLM to recognize the student-handwritten works.
+By default, we use the "Gemini 2.5 Pro model" as the MLLM model, and if you want to use this model, you need to fill the "GEMINI_API_KEY" in the .env file. We use the "handwritting_recognition_utils/Prompts/Initial_prompt_wo_problem_statement_v6.txt" as the system prompt template to have the MLLM to recognize the student-handwritten works. More details can be found in this python script: "handwritting_recognition_utils/MLLM_ocr_utils/gemini_inference_utils.py" (function: get_gemini_response, which will be called by the "handwritting_recognition_utils/batch_wise_handwritting_image_ocr_processing.py" main script for MLLM inference), which contains our default version of MLLM-based student-handwritten recognition pipeline. You can also modify the system prompt and used MLLM models in this python script to fit your own needs!
+
+2. Run the main script: "handwritting_recognition_utils/batch_wise_handwritting_image_ocr_processing.py" to start the MLLM-based student-handwritten recognition pipeline. An example command is as follows:
+
+cd handwritting_recognition_utils
+python batch_wise_handwritting_image_ocr_processing.py --task_name "Your_Task_Name" --API_model_name "Your_MLLM_Model_Name" --split_name "one of the following: [observation, test, debug]"
+
+An instance is shown as follows:
+
+python batch_wise_handwritting_image_ocr_processing.py --task_name Test --API_model_name models/gemini-2.5-pro --split_name debug
+
+Then the recognition results for each covered student work recogntion in split "split_name" will be saved in the directory:
+
+Outputs/{"Your_Task_Name"}/Homework_collected_database_trial_Homework{id1}_student_{id2}/models/"Your_MLLM_Model_Name"/Compare/{id3}_markdown.md
+
+where {id1}, {id2}, {id3} are the Homework ID, Student ID, and Question ID of the student work, respectively.
+
+
+III. Automatically judge the correctness of the recognition results
+Then the generated recognition results will be judged by a Gemini 2.5 Pro model as a judge to check the correctness of the recognition results compared with the ground truth introduced in Section I.4.
+
+You can run the script by following the steps below:
+
+cd check_recognition_error_val
+python step_9_run_LLM_as_a_judge_on_data_debug_full_data.py --task_name "Your_Task_Name" --model_name "Your_MLLM_Model_Name"
+python step_10_exclude_strict_items_in_OCR_err.py --task_name "Your_Task_Name" --model_name "Your_MLLM_Model_Name"
+python step_11_show_LLM_as_a_judge_result.py --task_name "Your_Task_Name" --model_name "Your_MLLM_Model_Name" # This you will see the recognition error statistics of your MLLM's recognition results compared with the ground truth introduced in Section I.4.
+python step_12_recognition_error_taxonomy.py --task_name "Your_Task_Name" --model_name "Your_MLLM_Model_Name"
+python step_13_visualize_taxonomy.py --task_name "Your_Task_Name" --model_name "Your_MLLM_Model_Name" # This will visualize the recognition error taxonomy of your MLLM's recognition results.
+
+An instance is shown as follows:
+
+cd check_recognition_error_val
+python step_9_run_LLM_as_a_judge_on_data_debug_full_data.py --task_name Test --model_name models/gemini-2.5-pro
+python step_10_exclude_strict_items_in_OCR_err.py --task_name Test --model_name models/gemini-2.5-pro
+python step_11_show_LLM_as_a_judge_result.py --task_name Test --model_name models/gemini-2.5-pro
+python step_12_recognition_error_taxonomy.py --task_name Test --model_name models/gemini-2.5-pro
+python step_13_visualize_taxonomy.py --task_name Test --model_name models/gemini-2.5-pro

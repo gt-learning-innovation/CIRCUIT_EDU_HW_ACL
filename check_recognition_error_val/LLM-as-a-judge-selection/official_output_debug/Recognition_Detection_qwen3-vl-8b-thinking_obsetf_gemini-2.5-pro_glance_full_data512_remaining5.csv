@@ -1,0 +1,135 @@
+﻿Homework ID,Student ID,Question ID,Recognition Errors
+Homework4,student_4,6_4-5,"1.
+Source:
+$v_1 - v_2 = (v_1 - v_1)/R_2 = v_a - v_1 / R_1$
+Rectified Version:
+$\frac{v_1-v_2}{R_7} = \frac{v_a-v_1}{R_1}$
+Reason:
+The target equation is mathematically incorrect, omits resistor $R_7$, and incorrectly combines terms. The ground truth shows the correct nodal analysis equation.
+
+2.
+Source:
+$v_b - v_c = (v_c - v_b)/R_4$
+Rectified Version:
+$\frac{V_b-V_c}{R_4} = \frac{V_c}{R_6}$
+Reason:
+The target equation is dimensionally incorrect as it equates voltage to current. The ground truth provides the correct current balance equation for the node.
+
+3.
+Source:
+$v_c - v_d = (v_d - v_o)/R_5 \Rightarrow v_o = \left(\frac{R_5}{R_3} + 1\right) v_a - \left(\frac{R_5}{R_3}\right) v_a$
+Rectified Version:
+$\frac{V_a-V_d}{R_3} = \frac{V_d-V_o}{R_5} \Rightarrow V_o = (\frac{R_5}{R_3}+1)V_d - (\frac{R_5}{R_3})V_a$
+Reason:
+The initial part of the target equation is dimensionally incorrect and uses the wrong variables. The derived expression for $v_o$ is also incorrect, using $v_a$ in place of $v_d$, which would cause the expression to simplify to zero.
+
+4.
+Source:
+$v_c = v_d \Rightarrow v_o = \left(\frac{R_6}{R_3 + R_4}\right) \cdot \left(\frac{R_3/R_5 + 1}{R_4}\right) v_2 - \left(\frac{R_6}{R_3 + R_4}\right) \cdot \left(\frac{R_5}{R_3 + R_4}\right) v_1$
+Rectified Version:
+$V_c = V_d \Rightarrow V_o = (1+\frac{R_5}{R_3})(1+\frac{R_4}{R_6})V_b - (\frac{R_5}{R_3})V_a$
+Reason:
+The target's expression for $v_o$ after substitution is algebraically incorrect and does not follow from the preceding steps.
+
+5.
+Source:
+$i_o = \frac{1}{R_5} (v_d - v_o) \Rightarrow i_o = \frac{1}{R_5} \left(\left(1 + \frac{R_6}{R_4}\right) v_b - v_o\right) \Rightarrow \left(\frac{R_6}{R_3 + R_4}\right) \cdot \left( \left(\frac{R_3/R_5 + 1}{R_4}\right) v_2 - \left(\frac{R_5}{R_3 + R_4}\right) v_1 \right) - \frac{1}{R_5} v_o$
+Rectified Version:
+$i_o = \frac{1}{R_5}(V_d-V_o) \Rightarrow \frac{1}{R_5}((1+\frac{R_6}{R_4})V_b-V_o)$
+Reason:
+While the first two parts of the derivation are correct, the final expression in the target is nonsensical and does not represent a valid substitution.
+
+6.
+Source:
+[Entire TARGET MODEL OUTPUT]
+Rectified Version:
+[Missing equations from GROUND TRUTH]
+$\Rightarrow V_a = (\frac{R_1}{R_7}+1)V_1 - (\frac{R_1}{R_7})V_2$
+$\frac{v_1-v_2}{R_7} = \frac{v_2-v_b}{R_2}$
+$\Rightarrow V_b = (\frac{R_2}{R_7}+1)V_2 - (\frac{R_2}{R_7})V_1$
+$v_o = (\frac{R_6(R_3+R_5)}{R_3(R_6+R_4)}) ((\frac{R_2}{R_7}+1)V_2 - (\frac{R_2}{R_7})V_1) - (\frac{R_5}{R_3})((\frac{R_1}{R_7}+1)V_1 - (\frac{R_1}{R_7})V_2)$
+... and other final expressions.
+Reason:
+The target output is incomplete. It omits several key derivation steps and all final, fully substituted expressions for $v_o$ and $i_o$ that are present in the ground truth."
+Homework5,student_1,7_4-3,"1.
+Source:
+C = \frac{1}{\frac{1}{C} + \frac{1}{2C + \frac{1}{2C}}}
+
+Rectified Version:
+$$ C_{tot} = \frac{1}{\frac{1}{C} + \frac{1}{2C+\frac{1}{\frac{1}{C}+\frac{1}{C}}}} = \frac{1}{\frac{1}{C} + \frac{1}{2C+\frac{1}{2}C}} = \frac{1}{\frac{1}{C} + \frac{1}{\frac{5}{2}C}} = \frac{1}{\frac{1}{C} + \frac{2}{5C}} = \frac{1}{\frac{7}{5C}} = \frac{5C}{7} $$
+Reason:
+The target model's formula for the total capacitance is mathematically incorrect and incomplete. It incorrectly uses `C` for the total capacitance instead of `C_tot`, and the expression in the denominator is wrong. It also omits the entire simplification process shown in the ground truth.
+
+2.
+Source:
+i(t) = C \frac{dv}{dt}
+
+Rectified Version:
+$$ i(t) = C \frac{d}{dt}V(t) \quad \frac{i(t)}{C_{tot}} = \frac{dV}{dt} $$
+Reason:
+In the context of the entire circuit, the formula should use the total capacitance, `C_tot`, not `C`, which represents an individual capacitor's value. The target also misses the rearranged form of the equation.
+
+3.
+Source:
+C = \frac{0.025}{3500} = 7.14 \mu F
+
+Rectified Version:
+$$ C_{tot} = \frac{.025}{3500} = 7.14 \mu F = \frac{5C}{7} $$
+Reason:
+The target incorrectly labels the total capacitance as `C` instead of `C_tot`. It also omits the crucial step of equating the numerical value to the symbolic expression `5C/7`, which is necessary for the final solution.
+
+4.
+Source:
+5C = 50 \text{ nF}
+
+Rectified Version:
+$$ 5C = 50 \mu F $$
+Reason:
+The unit is incorrect. The target uses nanofarads (nF) instead of the correct microfarads (μF)."
+Homework6,student_31,8_3-2,"1.
+Source: $ R_x = 6 \parallel 6 + 6 = 6.1112 $
+Rectified Version: $R_t = 6||6+6 = 6||12$
+Reason: The target model incorrectly calculates the equivalent resistance. The expression should be interpreted as 6Ω in parallel with (6Ω + 6Ω), and the numerical result of 6.1112 is incorrect.
+
+2.
+Source: $ R_x = \frac{1}{6} + \frac{1}{12} = 4 $ Ω
+Rectified Version: $= \frac{1}{\frac{1}{6} + \frac{1}{12}} = 4\Omega$
+Reason: The target model presents a mathematically incorrect formula for calculating the parallel resistance. The sum of the conductances (1/R) is equated to the resistance, which is incorrect. The correct formula involves taking the reciprocal of the sum of the conductances."
+Homework8,student_1,10_7-1,"1.
+Source: [Z_{th} = 2500j + \frac{1}{\left(\frac{1}{2500} + \frac{1}{-500j}\right)} = 175.217 \angle 82.875^\circ \, \Omega]
+Rectified Version: [Z_{thevenin} = 1250j + \frac{1}{\frac{1}{2500} + \frac{1}{-500j}} = (775.217 \angle 82.875 \Omega)]
+Reason: The inductor impedance at ω = 1000 is 1250j, not 2500j. This error in the formula leads to an incorrect final numerical value.
+
+2.
+Source: [V_{th} = 12 \cdot \left( \frac{-500j}{2500j - 500j} \right) = 2.35 \angle 78.69^\circ \, \text{V}]
+Rectified Version: [V_{oc} = 12 \cdot \frac{-500j}{-500j+2500} = (2.35 \angle -78.69^\circ \text{ V})]
+Reason: The formula for the voltage divider is incorrect. The denominator should be the sum of the resistor and capacitor impedances (2500 - 500j). The angle of the result is also incorrect (positive instead of negative).
+
+3.
+Source: [Z_{th} = 2500j + \frac{1}{\left(\frac{1}{2500} + \frac{1}{-1000j}\right)}]
+Rectified Version: [Z_{th_{2000}} = 2500j + \frac{1}{\frac{1}{2500} + \frac{1}{-250j}}]
+Reason: The capacitor impedance at ω = 2000 is -250j, not -1000j.
+
+4.
+Source: [V_{th} = 12 \cdot \left( \frac{-1000j}{2500j - 1000j} \right) = 1.944 \angle 84.29^\circ \, \text{V}]
+Rectified Version: [V_{oc} = 12 \cdot \frac{-250j}{-250j+2500} = (1.194 \angle -84.29^\circ)]
+Reason: The formula is incorrect, using the wrong impedance value for the capacitor and an incorrect structure for the voltage divider. The final numerical result (both magnitude and angle) is also incorrect.
+
+5.
+Source: [Z_{th} = 5000j + \frac{1}{\left(\frac{1}{2500} + \frac{1}{-2000j}\right)} = 4875.32 \angle 89.43^\circ \, \Omega]
+Rectified Version: [Z_{th} = 5000j + \frac{1}{\frac{1}{2500} + \frac{1}{-125j}} = (4875.32 \angle 89.93^\circ \Omega)]
+Reason: The capacitor impedance at ω = 4000 is -125j, not -2000j. This error in the formula leads to an incorrect angle in the final result.
+
+6.
+Source: [V_{th} = 12 \cdot \left( \frac{-2000j}{5000j - 2000j} \right) = 1.599 \angle -8.74^\circ \, \text{V}]
+Rectified Version: [V_{oc} = 12 \cdot \frac{-125j}{-125j+2500} = (0.599 \angle -87.14^\circ \text{V})]
+Reason: The formula is incorrect, using the wrong impedance value for the capacitor and an incorrect structure for the voltage divider. The final numerical result (both magnitude and angle) is also incorrect."
+Homework8,student_42,10_10-4,"1.
+Source: $$ V_o(t) = \frac{(-2500j)(1.2)}{15000 - 2500j} = 0.197 \angle -80.54^\circ \text{ V} $$
+Rectified Version: $$V_o(t) = \frac{-2500j(1.2)}{15000-2500j} = 0.197 \angle -80.54^\circ$$
+Reason: The unit V should not be present in this intermediate step of the calculation, which represents a phasor value.
+
+2.
+Source: $$ V_o(t) = \left[ 0.197 \cos(2000t - 80.54^\circ) \right] \text{ V} $$
+Rectified Version: $$v_o(t) = [0.1974 \cos(2000t - 80.54^\circ)] V$$
+Reason: The variable for the time-domain output voltage should be lowercase `v_o(t)` to distinguish it from the frequency-domain phasor. Additionally, the amplitude `0.197` is a truncated value of the more precise `0.1974`."

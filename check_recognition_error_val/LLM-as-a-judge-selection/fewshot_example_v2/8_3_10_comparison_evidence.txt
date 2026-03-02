@@ -1,0 +1,50 @@
+Items 1 and 2 represent entirely different scenarios for the target diagram (e.g., "open-circuited" vs. "short-circuited", or "3 Ω resistor in series with 9 Ω" vs. "3/2 Ω resistor in series with 9 Ω"). These must be flagged as errors. Other variations—such as minor grammatical differences or descriptions that are slightly more or less detailed—can be ignored as long as they do not convey incorrect information.
+
+In Item 3, changing $i_L(t)$ to $i(t)$ leads to a misunderstanding of the function; symbols representing the same physical quantity must remain consistent throughout the formula. Similarly, errors that will significantly change the formulas meaning must be pointed out, for example, if the ground truth uses $q = \int_{-\infty}^{t} i(\tau) \, d\tau$ but the target uses $dt$ instead of $d\tau$, this totally changes the mathematical meaning. Nevertheless, it is acceptable to ignore differences that do not change the underlying meaning, such as $v_0$ vs. $V_o$ (capitalization), $10^{-7}$ vs. $E^{-7}$, $\int_{0}^{1}d\tau$ vs. $\int_{0}^{1}dx$, $10^\circ$ vs. $10 \text{ degrees}$, $sin 2t$ vs $sin(2t)$, $\frac{1}{3/2}$ vs. $\frac{2}{3}$, etc. These are simply diverse ways of expression that lead to the same result without causing confusion.
+
+Items 4 and 5 represent standard errors. However, note that errors involving symbols for widely used physical quantities (such as natural response and forced response) must be treated strictly. For instance, $I_n$ should not be misidentified as $I_e, I_x$, or $I_t$; $V_f$ should not be $V_{eq}$ or $V_h$; the steady-state value $k$ or $K$ should not be altered; and Thevenin resistance ($R_t, R_T, R_{th}$) should not be labeled as $R_x$.
+
+Item 6 involves unit errors. It is acceptable to be lenient with unit issues in intermediate steps; however, for final answers, any missing units or the addition of incorrect units (those that do not match the ground truth) must be treated as errors.
+
+The **sentence order** (e.g., "first A then B" vs. "first B then A") and **layout sketches** in the OCR results, such as:
+
+"
+---
+
+**Left side (initial conditions and equivalent circuit)**
+
+$$
+\text{(top node currents)} \Rightarrow 5\text{A} \quad 4\Omega \quad 12\Omega \quad 9\text{A} \quad 3\Omega \quad 9\Omega \; v^+
+$$
+
+*add curr srcs in parallel*
+
+$$
+14\text{A} \quad \boxed{\frac{3}{2}\,\Omega} \quad 9\Omega^{+}_{-}
+$$
+
+$$
+\boxed{3\Omega} \quad 9\Omega^{+}_{-}
+$$
+
+$$
+\frac{1}{\frac{1}{4} + \frac{1}{12} + \frac{1}{3}} \Rightarrow \frac{12}{8}
+$$
+
+"
+
+can be ignored. Focus solely on information present in the ground truth that the OCR results lack (excluding sketch-like elements), especially missing critical variables, key derivation steps, and algebraic expressions used for substitution.
+
+Formulas may be presented in different algebraic forms, such as:
+
+$$
+V = \frac{189}{\frac{21}{2}}\,V
+$$
+
+and 
+
+$$
+v = 189 \left( \frac{2}{21} \right) v
+$$
+
+These should be treated as identical.

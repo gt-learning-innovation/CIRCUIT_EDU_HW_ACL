@@ -1,0 +1,298 @@
+﻿Homework ID,Student ID,Question ID,Recognition Errors
+Homework1,student_2,2_5-2,No significant errors found.
+Homework1,student_21,1_5-2,"1.
+Source:
+$$q = \int_{-\infty}^{t} i d\tau = \int_{0}^{7200} 10 dt + q(0)$$
+Rectified Version:
+$$ q = \int_{-\infty}^{t} i d\tau = \int_{0}^{7200} 10 d\tau + q(0) $$
+Reason: The variable of integration in the definite integral is transcribed as `dt`, but the result of the integration in the next step is expressed in terms of `τ`. The variable of integration should be `dτ` to be consistent with the initial formula and the subsequent evaluation.
+
+2.
+Source:
+$$\text{cost} = p \cdot 12\text{ cents}$$
+$$= (1.1 \text{ kW} \cdot 12\text{ cents}) \cdot 2$$
+$$= 26.4 \text{ cents} \rightarrow \$0.264$$
+Rectified Version:
+$$ \text{cost} = p \cdot .12\$ $$
+$$ = (1.1 kW \cdot .12\$) \cdot 2 $$
+$$ = 26.4 \text{¢} \rightarrow \$0.264 $$
+Reason: The target model output uses ""cents"" as the unit, while the ground truth uses the dollar sign ""$"" and the cent symbol ""¢"". Although numerically equivalent, the notation differs."
+Homework1,student_31,1_5-3,No significant errors found.
+Homework1,student_31,3_2-2,No significant errors found.
+Homework1,student_31,3_2-6,No significant errors found.
+Homework1,student_38,2_4-7,No significant errors found.
+Homework1,student_38,3_4-4,No significant errors found.
+Homework1,student_41,2_5-1,No significant errors found.
+Homework1,student_41,3_2-1,No significant errors found.
+Homework1,student_6,2_4-6,No significant errors found.
+Homework1,student_6,3_6-1,No significant errors found.
+Homework2,student_2,4_5-2,No significant errors found.
+Homework2,student_2,4_7-6,No significant errors found.
+Homework2,student_31,4_4-6,No significant errors found.
+Homework2,student_35,4_2-2,"1.
+Source:
+$$
+\left[ \begin{array}{cccc}
+-1 & 3 & -2 & 40 \\
+-5 & 1 & 0 & 20 \\
+0 & -3 & 5 & 30
+\end{array} \right]
+-
+\left[ \begin{array}{cccc}
+-1 & 3 & -2 & 40 \\
+0 & -14 & 10 & -180 \\
+0 & -3 & 5 & 30
+\end{array} \right]
+$$
+Rectified Version:
+$$
+\left[ \begin{array}{ccc|c} -1 & 3 & -2 & 40 \\ -5 & 1 & 0 & 20 \\ 0 & -3 & 5 & 30 \end{array} \right] \sim \left[ \begin{array}{ccc|c} -1 & 3 & -2 & 40 \\ 0 & -14 & 10 & -180 \\ 0 & -3 & 5 & 30 \end{array} \right]
+$$
+Reason: The target output incorrectly uses a subtraction symbol `-` between the matrices. The correct symbol is `~`, which denotes row equivalence in the context of Gaussian elimination. The use of `-` implies matrix subtraction, which is mathematically incorrect here."
+Homework2,student_35,4_3-3,No significant errors found.
+Homework2,student_35,4_4-1,No significant errors found.
+Homework2,student_38,4_2-5,"1.
+Source: solve system: $v_1 = -.261 \quad v_2 = .337 \quad v_3 = -.239$
+Rectified Version: solve system: $V_1 = .261 \quad V_2 = .337 \quad V_3 = .239 \quad v = .022$
+Reason: The signs for the values of v1 and v3 are incorrect. They should be positive, not negative."
+Homework2,student_38,4_6-2,No significant errors found.
+Homework2,student_38,4_7-1,No significant errors found.
+Homework2,student_41,4_7-2,"1.
+Source: The right mesh is labeled with a counter-clockwise arrow $5i_a$.
+Rectified Version: the right mesh current is labeled `5i_a`.
+Reason: The ground truth states that both mesh currents are defined as clockwise. The target model incorrectly identifies the right mesh current as counter-clockwise."
+Homework4,student_1,6_3-3,"1.
+Source: [A $20\text{k}\Omega$ load resistor is connected at the output $v_o$.]
+Rectified Version: [This component is not mentioned in the ground truth.]
+Reason: The target output describes a 20kΩ load resistor that is not present in the ground truth description or used in the subsequent calculations. This appears to be a hallucinated component.
+
+2.
+Source: [A current $i_o$ is marked with an upward arrow on the left branch, indicating current flowing clockwise from the 12V source, through the $4\text{k}\Omega$ resistor, and towards the output.]
+Rectified Version: [An additional current arrow labeled `i_o` is drawn flowing from the 12V source, through the 4kΩ resistor, towards node `v_a`. This is in addition to the original `i_o` which is shown flowing from node `v_a` through the 8kΩ resistor to the op-amp output.]
+Reason: The target incorrectly describes the path of the current `i_o` as flowing ""towards the output"" instead of ""towards node v_a"". More importantly, it fails to capture the critical detail from the ground truth that the student has ambiguously labeled two different currents as `i_o`, which is a key aspect of the student's work."
+Homework4,student_21,6_4-2,No significant errors found.
+Homework4,student_31,6_3-2,No significant errors found.
+Homework4,student_31,6_4-4,No significant errors found.
+Homework4,student_31,6_4-6,No significant errors found.
+Homework4,student_38,6_4-1,"1.
+Source: `\frac{1}{10\text{k}} v_b = -\frac{1}{40\text{k}}`
+Rectified Version: `\frac{1}{10k}v_b = -\frac{1}{40k} V`
+Reason: The target is missing the unit ""V"" at the end of the equation.
+
+2.
+Source: `v_b = -\frac{1}{4} \text{ V} = v_e`
+Rectified Version: `v_b = -\frac{1}{4}V : v_e`
+Reason: The target uses an equals sign `=` where the ground truth uses a colon `:`.
+
+3.
+Source: `\text{KCL @ node e 'in'} =`
+Rectified Version: `KCL @ node 'e' in:`
+Reason: The target incorrectly adds an equals sign and omits the colon.
+
+4.
+Source: `v_d = \frac{5}{2} \text{ V}`
+Rectified Version: `v_d = \frac{5}{2}V \quad \checkmark`
+Reason: The target is missing the checkmark symbol `\checkmark` at the end of the line.
+
+5.
+Source: `v_a = 2 \text{ V} \quad v_b = -\frac{1}{4} \text{ V} \quad v_c = -5 \text{ V} \quad v_d = \frac{5}{2} \text{ V} \quad v_e = -\frac{1}{4} \text{ V}`
+Rectified Version: `v_a = 2V \quad v_b = -\frac{1}{4}V \quad v_c = -5V \quad v_d = \frac{5}{2}V \quad v_e = -\frac{1}{4}V \quad \checkmark`
+Reason: The target is missing the checkmark symbol `\checkmark` at the end of the line."
+Homework4,student_4,6_4-5,"1.
+Source:
+$$ \frac{V_b - V_c}{R_4} = \frac{V_c}{R_6} \quad \Rightarrow \quad V_c = \left( \frac{1}{1 + \frac{R_4}{R_6}} \right) V_b $$
+Rectified Version:
+$$ \frac{V_b-V_c}{R_4} = \frac{V_c}{R_6} \Rightarrow V_c = (1+\frac{R_6}{R_4})V_b $$
+Reason: The derived expression for Vc is mathematically different from the ground truth. The target's expression simplifies to `(R6 / (R6 + R4)) * Vb`, while the ground truth's expression is `((R4 + R6) / R4) * Vb`.
+
+2.
+Source:
+$$ \Rightarrow V_o = \left(1 + \frac{R_5}{R_3}\right)\left( \frac{1}{1 + \frac{R_4}{R_6}} \right)V_b - \left(\frac{R_5}{R_3}\right)V_a $$
+Rectified Version:
+$$ V_c = V_d \Rightarrow V_o = (1+\frac{R_5}{R_3})(1+\frac{R_4}{R_6})V_b - (\frac{R_5}{R_3})V_a $$
+Reason: The term multiplying Vb is mathematically different. The target has a factor of `1 / (1 + R4/R6)`, while the ground truth has a factor of `(1 + R4/R6)`.
+
+3.
+Source:
+$$ V_o = \left( \frac{R_5 R_1}{R_3 R_7} + \left( \frac{R_6(R_3+R_5)}{R_3(R_6+R_4)} \right) \left(\frac{R_2}{R_7} + 1\right) \right)V_2 - \left( \frac{R_5}{R_3}\left(\frac{R_1}{R_7} + 1\right) + \frac{R_6 R_2(R_3+R_5)}{R_3 R_7(R_6+R_4)} \right)V_1 $$
+Rectified Version:
+$$ v_o = \left( (\frac{R_5 R_1}{R_3 R_7} + \frac{R_6(R_3+R_5)}{R_3(R_6+R_4)})(\frac{R_2}{R_7}+1) \right) V_2 - \left( \frac{R_5}{R_3}(\frac{R_1}{R_7}+1) + \frac{R_6 R_2(R_3+R_5)}{R_3 R_7(R_6+R_4)} \right) V_1 $$
+Reason: The placement of parentheses in the coefficient for V2 is incorrect. In the target, the term `(R2/R7 + 1)` only multiplies the second part of the sum, whereas in the ground truth, it multiplies the entire sum within the parentheses, which changes the mathematical result.
+
+4.
+Source:
+$$ i_o = \left( \left( \frac{R_6}{R_5(R_6+R_4)} \right) \left(1 + \frac{R_2}{R_7}\right) - \frac{R_1}{R_3 R_7} - \frac{R_6(R_3+R_5)}{R_3 R_5(R_6+R4)} \left(\frac{R_2}{R_7} + 1\right) \right)V_2 - \left( \frac{R_6 R_2}{R_5 R_7(R_6+R_4)} - \frac{1}{R_3}\left(\frac{R_1}{R_7} + 1\right) - \frac{R_6 R_2(R_3+R_5)}{R_3 R_5 R_7(R_6+R_4)} \right)V_1 $$
+Rectified Version:
+$$ i_o = \left[ \left(\frac{R_6}{R_5(R_6+R_4)}\right) (\frac{R_1}{R_7}+1) - \frac{R_1}{R_3 R_7} - (\frac{R_6(R_3 + R_5)}{R_3R_5(R_6+R_4)}) (\frac{R_2}{R_7}+1)\right]V_2 - \left( \frac{R_6R_2}{R_5R_7(R_6+R_4)} - \frac{1}{R_3}\left(\frac{R_1}{R_7}+1\right) -\frac{R_6R_2(R_3+R_5)}{R_3R_5R_7(R_6+R_4)} \right) V_1 $$
+Reason: In the coefficient for V2, the first multiplicative factor in the target is `(1 + R2/R7)`, while in the ground truth it is `(R1/R7 + 1)`."
+Homework5,student_1,7_6-2,No significant errors found.
+Homework5,student_21,7_8-2,No significant errors found.
+Homework5,student_35,7_2-2,No significant errors found.
+Homework5,student_38,7_2-4,No significant errors found.
+Homework5,student_38,7_4-1,No significant errors found.
+Homework5,student_42,7_3-2,No significant errors found.
+Homework5,student_42,7_4-3,No significant errors found.
+Homework5,student_42,7_7-2,No significant errors found.
+Homework5,student_6,7_5-4,No significant errors found.
+Homework5,student_6,7_5-5,"1.
+Source: $L = 0.005 \text{ H}$ $\quad \quad V_s$
+Rectified Version: $L = 0.005 \text{H}$
+Reason: The target output includes an extraneous symbol `V_s` which is not present in the ground truth.
+
+2.
+Source: $i(t) = \boxed{- 0.0000018 \text{ A}}$
+Rectified Version: $i(t) = -0.0000018 \text{ A}$
+Reason: The target output incorrectly places the final answer in a box, which is not present in the ground truth."
+Homework6,student_16,8_3-2,"1.
+Source: $$T = \frac{L}{R} = 2 \text{ s}$$
+Rectified Version: $$\tau = \frac{L}{R} = 2s$$
+Reason: The variable for the time constant is incorrectly transcribed as `T` instead of the correct Greek letter `\tau` (tau). While both can represent time, `\tau` is the standard symbol for the time constant in this context, whereas `T` usually represents the period."
+Homework6,student_16,8_3-5,"1.
+Source: $$R_{th} = 20 \text{ k}\Omega$$
+Rectified Version: $$R_{t} = 20k\Omega$$
+Reason: The subscript for the Thevenin resistance is transcribed as 'th' but it is 't' in the ground truth.
+
+2.
+Source: $$v(t) = 10 + (5 - 10)e^{-\frac{t}{.08}} = \underline{10 - 5e^{-\frac{t}{.08}} \text{ V} \quad t > 0}$$
+Rectified Version: $$v(t) = 10 + (5-10)e^{-t/.08} = 10 - 5e^{-t/.08} \text{ V} \quad t>0$$
+Reason: The target output incorrectly includes an underline for the final expression, which is not present in the ground truth."
+Homework6,student_16,8_7-5,"1.
+Source: $$i(t) = .00533 e^{-st} \text{ A}$$
+Rectified Version: $$i(t) = .00533e^{-5t} \text{ A}$$
+Reason: The exponent in the exponential term was transcribed as `-st` instead of `-5t`.
+
+2.
+Source: $$i(t) = C \frac{dv_c(t)}{dt} + \frac{v(o)}{R} \Rightarrow .00533 e^{-5t} = \frac{1}{4} \mu\text{F} \frac{dv_c(t)}{dt} + .001 v_c(t)$$
+Rectified Version: $$i(t) = C \frac{dv_c(t)}{dt} + \frac{v(0)}{R} \Rightarrow .00533e^{-5t} = \frac{1}{4} \mu F \frac{dv_c(t)}{dt} + .001 v_c(t)$$
+Reason: The initial condition term `v(o)` was transcribed with the letter 'o' instead of the number '0'.
+
+3.
+Source: $$v_c(t)' + 4000 v(t) = 4000 e^{-st}$$
+Rectified Version: $$V_c(t)' + 4000 V(t) = 4000 e^{-5t}$$
+Reason: There are two errors in this equation. First, the term `v(t)` should be `v_c(t)` (represented as `V(t)` in the ground truth) to be consistent with the variable of the differential equation. Second, the exponent in the exponential term is `-st` instead of `-5t`."
+Homework6,student_2,8_7-3,"1.
+Source: [Exact snippet from TARGET that is wrong]
+$$5000 \cdot 2 \cos 2t$$
+Rectified Version: [Correct snippet from GROUND TRUTH]
+$$v_c = 5000 * 2\cos(2t)$$
+Reason: [Brief explanation of the error]
+The target model missed the ""v_c ="" part of the equation, transcribing only the expression on the right-hand side. This changes the meaning of the line from an equation to a standalone expression."
+Homework6,student_31,8_3-1,No significant errors found.
+Homework6,student_31,8_3-4,"1.
+Source:
+**Find $R_x$:**
+
+$$R_x = \frac{V_{oc}}{i_{sc}} = \frac{-6}{-2} = 3\Omega$$
+Rectified Version:
+**Find Rt:**
+
+$$R_t = \frac{Voc}{i_{sc}} = \frac{-6}{-2} = 3\Omega$$
+Reason: The variable for Thevenin resistance is incorrectly labeled as `R_x` instead of the standard `R_t`.
+
+2.
+Source:
+$$\tau = \frac{L}{R_x} = \frac{6}{3} = 2s$$
+Rectified Version:
+$$\tau = \frac{L}{R_t} = \frac{6}{3} = 2s$$
+Reason: The variable for Thevenin resistance is incorrectly labeled as `R_x` instead of the standard `R_t`."
+Homework6,student_35,8_3-9,"1.
+Source:
+$$V_o(0) = \frac{3}{R_1 + R_2 + 3} \cdot 24 = \frac{72}{R_1 + R_2 + 3}$$
+
+Rectified Version:
+$$ V_o(0-) = \frac{3}{R_1+R_2+3} \cdot 24 = \frac{72}{R_1+R_2+3} $$
+Reason: The analysis is for the time just before the switch closes (`t < 0`), so the correct notation for the initial condition is at `t=0-`, not `t=0`. The target model is also inconsistent, as it uses `i(0^-)` and `V_o(0^-)` in the next equation."
+Homework6,student_38,8_3-10,"1.
+Source:
+$i_L(t) = A e^{-24t}$
+
+Rectified Version:
+$i_L(t) = Ae^{\frac{1}{-24}t}$
+Reason: The exponent in the exponential function is different. The target model output has `-24t` while the ground truth has `(1/-24)t`, which evaluates to `-t/24`. These expressions are not mathematically equivalent.
+
+2.
+Source:
+$$v(t) = 18 e^{-24t} V$$
+
+Rectified Version:
+$$ v(t) = 18e^{\frac{1}{-24}t} V $$
+Reason: The exponent in the exponential function is different. The target model output has `-24t` while the ground truth has `(1/-24)t`, which evaluates to `-t/24`. These expressions are not mathematically equivalent."
+Homework6,student_41,8_4-1,No significant errors found.
+Homework7,student_1,9_5-1,"1.
+Source: $$s^2 + 4000s + 4 \cdot 10^6 = 0 \quad \quad s = -2000$$
+Rectified Version: $$s^2 + 4000s + 4 \cdot 10^6 \quad s = -2000$$
+Reason: The target output incorrectly adds ""= 0"" to the characteristic polynomial, turning it into an equation. The ground truth correctly transcribes the polynomial as written by the student, without the ""= 0""."
+Homework7,student_16,9_3-3,No significant errors found.
+Homework7,student_31,9_4-2,No significant errors found.
+Homework7,student_35,9_6-1,"1.
+Source: [Exact snippet from TARGET that is wrong]
+$V_c = 0.8 \frac{di_L}{dt}$
+Rectified Version: [Correct snippet from GROUND TRUTH]
+$V_L = 0.8 \frac{di_L}{dt}$
+Reason: [Brief explanation of the error]
+The variable for the voltage across the inductor was transcribed as `V_c` instead of `V_L`. While numerically equivalent in this parallel circuit, the transcription should match the variable used in the source document.
+
+2.
+Source: [Exact snippet from TARGET that is wrong]
+$$\frac{d^2V_c}{dt^2} + 800 \frac{dV_c}{dt} + 2.5 \cdot 10^5 V_c = 0$$
+Rectified Version: [Correct snippet from GROUND TRUTH]
+$\frac{d^2V_c}{dt^2} + 200 \frac{dV_c}{dt} + 2.5 \cdot 10^5 V_c = 0$
+Reason: [Brief explanation of the error]
+The coefficient of the first derivative term is incorrect. The target model has `800`, while the ground truth has `200`."
+Homework7,student_38,9_2-1,"1.
+Source: [v = v_s - 2 i_L - L \frac{di}{dt} \quad \quad \frac{dv}{dt} = -2 \frac{di_L}{dt} - L \frac{d^2i}{dt^2}]
+Rectified Version: [V = v_s - 2 i_L - L \frac{di_L}{dt}
+\frac{dv}{dt} = -2 \frac{di_L}{dt} - L \frac{d^2i_L}{dt^2}]
+Reason: The derivatives are with respect to the inductor current, $i_L$, not a generic current $i$. The OCR incorrectly omits the subscript 'L' in two terms.
+
+2.
+Source: [i_L - \frac{1}{100}\left(v_s - 2i_L - L\frac{di}{dt}\right) - C\left(-2\frac{di_L}{dt} - L\frac{d^2i}{dt^2}\right) = 0]
+Rectified Version: [i_L - \frac{1}{100}(v_s - 2i_L - L \frac{di_L}{dt}) - C \left(-2 \frac{di_L}{dt} - L \frac{d^2i_L}{dt^2}\right) = 0]
+Reason: This is a cascading error from the previous step. The derivatives of the current should be for $i_L$, but the OCR output incorrectly shows them for a generic current $i$."
+Homework7,student_38,9_7-2,"1.
+Source: # 12040 Homework 7 cont
+Rectified Version: 2040 Homework 7 cont
+Reason: The course number is transcribed incorrectly as ""12040"" instead of ""2040""."
+Homework7,student_41,9_4-1,"1.
+Source: $$i_c = Csv \quad \quad i_2 = \frac{v - v_s}{sL}$$
+Rectified Version: $$i_c = Csv \quad i_L = \frac{V-V_s}{sL}$$
+Reason: The current through the inductor is incorrectly labeled as `i_2` instead of the standard notation `i_L`. This is a significant error in identifying a key physical quantity."
+Homework8,student_16,10_4-6,"1.
+Source:
+### Student's Work
+
+**Circuit Analysis**
+The student did not draw a new circuit diagram but listed the impedance values and equations derived from the original circuit.
+
+**Calculations and Equations**
+
+> **Note:** In the denominator of the equation above, the term for the resistor appears to be written as $j40$, though the calculation result suggests the student treated it as the real value $40$. Additionally, the variable calculated is labeled $I_1$, but the formula corresponds to the current divider rule for $I_2$ (the branch with the resistor).
+
+**Final Answer**
+Rectified Version:
+[This content is not present in the ground truth.]
+Reason: The target output includes additional headers, descriptive text, and an analytical note that are not part of the ground truth. The purpose of OCR is to transcribe the source text, not to add commentary or structural formatting.
+
+2.
+Source:
+$$I_{\text{source}} = .12 \angle 0^\circ$$
+Rectified Version:
+$$I = .12 \angle 0^\circ$$
+Reason: The variable for the source current was changed from `I` in the ground truth to `I_source` in the target output. This alters the original notation.
+
+3.
+Source:
+$$\boxed{V = .96 \cos(4000t - 140^\circ) V}$$
+Rectified Version:
+$$V = .96 \cos(4000t - 140^\circ) \, \text{V}$$
+Reason: The target output incorrectly places the final answer inside a box (`\boxed{}`), which is a formatting addition not found in the ground truth."
+Homework8,student_2,10_6-1,No significant errors found.
+Homework8,student_41,10_10-4,No significant errors found.
+Homework8,student_42,10_3-3,No significant errors found.
+Homework8,student_42,10_4-1,No significant errors found.
+Homework8,student_42,10_6-4,No significant errors found.
+Homework8,student_42,10_7-1,"1.
+Source: Components: A voltage source labeled $V_{oc}$ in series with an impedance labeled $R_{\tau}$.
+Rectified Version: [A generic Thévenin equivalent circuit is drawn, consisting of a voltage source labeled $V_{oc}$ in series with an impedance labeled $R_T$.]
+Reason: The OCR incorrectly identified the subscript for the Thévenin impedance as the Greek letter tau ($\tau$) instead of the letter T. The symbol $\tau$ is typically used for time constants and is incorrect in this context. The ground truth uses $R_T$ in its description and $R_t$ in the formulas, both of which are acceptable notations."
+Homework8,student_6,10_3-2,No significant errors found.
