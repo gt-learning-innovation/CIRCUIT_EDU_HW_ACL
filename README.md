@@ -1,6 +1,6 @@
 # EDU-CIRCUIT-HW
 
-This is the official repository for the paper "Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions".
+This is the official repository for the paper "Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions" (ACL findings 2026).
 
 ---
 
