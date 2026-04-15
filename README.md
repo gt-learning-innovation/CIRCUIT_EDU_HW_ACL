@@ -1,6 +1,12 @@
 # EDU-CIRCUIT-HW
 
+[![Website](https://img.shields.io/badge/Website-Project%20Page-2ea44f?style=flat-square)](https://gt-learning-innovation.github.io/CIRCUIT_EDU_HW_ACL/)
+[![ArXiv](https://img.shields.io/badge/ArXiv-2602.00095-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.00095)
+[![ACL Findings](https://img.shields.io/badge/ACL%20Findings-2026-8a5cf6?style=flat-square)](https://aclanthology.org/)
+
 This is the official repository for the paper "Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions" (ACL findings 2026).
+
+The project website is available at: [https://gt-learning-innovation.github.io/CIRCUIT_EDU_HW_ACL/](https://gt-learning-innovation.github.io/CIRCUIT_EDU_HW_ACL/)
 
 ---
 
