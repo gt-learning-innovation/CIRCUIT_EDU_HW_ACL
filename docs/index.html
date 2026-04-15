@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EDU-CIRCUIT-HW | ACL 2026 Findings</title>
+    <meta
+      name="description"
+      content="EDU-CIRCUIT-HW is an ACL 2026 Findings paper and dataset for evaluating multimodal large language models on authentic university-level STEM handwritten solutions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"]
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"]
+          ]
+        },
+        svg: {
+          fontCache: "global"
+        }
+      };
+    </script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
+    ></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <nav class="top-nav" aria-label="Section navigation">
+      <div class="nav-inner">
+        <a class="nav-brand" href="#quick-glance">EDU-CIRCUIT-HW</a>
+        <div class="nav-links">
+          <a class="nav-link" href="#quick-glance" data-nav-link="quick-glance">A Quick Glance</a>
+          <a class="nav-link" href="#examples" data-nav-link="examples">Examples</a>
+          <a class="nav-link" href="#overview" data-nav-link="overview">Overview</a>
+          <a class="nav-link" href="#results" data-nav-link="results">Results</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-shell">
+      <header class="hero" id="quick-glance" data-nav-section="quick-glance">
+        <div class="hero-copy">
+          <p class="eyebrow">ACL 2026 Findings</p>
+          <h1>
+            <span class="hero-brand">EDU-CIRCUIT-HW</span>
+            <span class="hero-title">Evaluating MLLMs on Real-World University-Level STEM Student Handwritten Solutions</span>
+          </h1>
+          <p class="hero-summary">
+            A benchmark and analysis pipeline for studying how multimodal large
+            language models recognize authentic circuit-analysis homework,
+            where upstream visual recognition errors can silently propagate into
+            downstream auto-grading.
+          </p>
+          <p class="authors">
+            Weiyu Sun, Liangliang Chen, Yongnuo Cai, Huiru Xie, Yi Zeng, Ying
+            Zhang
+          </p>
+          <div class="hero-actions">
+            <a
+              class="primary-link"
+              href="https://github.com/gt-learning-innovation/CIRCUIT_EDU_HW_ACL"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Code
+            </a>
+            <a
+              class="secondary-link"
+              href="https://arxiv.org/abs/2602.00095"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Read Paper
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <figure>
+            <img
+              src="./assets/paper/showcase.png"
+              alt="Overview of the EDU-CIRCUIT-HW data format with original handwritten work and expert-verified transcript."
+            />
+          </figure>
+          <div class="hero-metrics" aria-label="Dataset highlights">
+            <div>
+              <span>1,334</span>
+              <p>authentic handwritten solutions</p>
+            </div>
+            <div>
+              <span>29</span>
+              <p>students from a Spring 2025 circuit course</p>
+            </div>
+            <div>
+              <span>62</span>
+              <p>unique homework questions</p>
+            </div>
+            <div>
+              <span>3.3%</span>
+              <p>human-routing rate in the case study</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="section explorer-section" id="examples" data-nav-section="examples">
+          <div class="section-heading">
+            <p class="eyebrow">Interactive Examples</p>
+            <h2>Browse expert-rectified transcripts alongside the original student image.</h2>
+          </div>
+
+          <div class="explorer-intro">
+            <p>
+              The examples below are copied from the expert-rectified
+              observation-set annotations. Each example comes from a different
+              homework and a different student, showing the diversity of real
+              student handwriting, symbolic notation, and circuit reasoning in
+              the dataset.
+            </p>
+            <div class="control-cluster">
+              <label class="select-label" for="example-select">Question ID</label>
+              <select id="example-select" aria-label="Select a question example"></select>
+            </div>
+          </div>
+
+          <div class="homework-pills" id="homework-pills" aria-label="Example shortcuts"></div>
+
+          <div class="example-meta" id="example-meta" aria-live="polite"></div>
+
+          <div class="viewer-grid">
+            <article class="panel image-panel">
+              <div class="panel-heading">
+                <p>Original handwritten image</p>
+              </div>
+              <div class="image-frame">
+                <img id="example-image" alt="" />
+              </div>
+            </article>
+
+            <article class="panel transcript-panel">
+              <div class="panel-heading">
+                <p>Expert-rectified LaTeX transcript</p>
+              </div>
+              <div class="transcript-body" id="transcript-body">
+                <p class="loading-copy">Loading transcript...</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section intro-section" id="overview" data-nav-section="overview">
+          <div class="section-heading">
+            <p class="eyebrow">Dataset Overview</p>
+            <h2>Authentic university STEM homework, not isolated textbook snippets.</h2>
+          </div>
+
+          <div class="intro-grid">
+            <div class="intro-copy">
+              <p>
+                EDU-CIRCUIT-HW contains handwritten student solutions from an
+                undergraduate circuit analysis course at a large research
+                university in the southeastern United States. Each sample pairs
+                a real handwritten submission with expert-supported evaluation
+                artifacts, enabling us to study recognition fidelity and
+                auto-grading robustness together rather than in isolation.
+              </p>
+              <p>
+                The observation split includes expert-verified near-verbatim
+                transcripts of student work, while the held-out test split
+                preserves realistic deployment conditions with ground-truth
+                grades but no expert rectifications. This makes the dataset
+                useful both for diagnosing visual failures and for measuring
+                their downstream impact.
+              </p>
+
+              <div class="detail-list">
+                <div>
+                  <h3>Observation set</h3>
+                  <p>513 solutions from 11 students, each with verified recognition and detailed grades.</p>
+                </div>
+                <div>
+                  <h3>Test set</h3>
+                  <p>821 solutions from 18 additional students with ground-truth grades for realistic evaluation.</p>
+                </div>
+                <div>
+                  <h3>Why it matters</h3>
+                  <p>
+                    The benchmark exposes latent recognition failures that can
+                    stay hidden when downstream grading criteria only inspect a
+                    subset of the student solution.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <figure class="split-figure">
+              <img
+                src="./assets/paper/split_information.png"
+                alt="Observation and test split information from the EDU-CIRCUIT-HW paper."
+              />
+              <figcaption>
+                Observation and test set statistics reported in the ACL 2026
+                Findings paper.
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section insight-section" id="results" data-nav-section="results">
+          <div class="section-heading compact">
+            <p class="eyebrow">Research Findings</p>
+            <h2>Recognition quality and grading quality can drift apart.</h2>
+          </div>
+
+          <div class="insight-band">
+            <article>
+              <span>01</span>
+              <p>
+                Current MLLMs can appear strong on downstream grading while
+                still making substantial upstream visual recognition mistakes in
+                equations, symbols, diagrams, and reasoning traces.
+              </p>
+            </article>
+            <article>
+              <span>02</span>
+              <p>
+                EDU-CIRCUIT-HW evaluates both recognition and grading, making
+                it possible to study how recognition errors cascade into
+                high-stakes educational decisions.
+              </p>
+            </article>
+            <article>
+              <span>03</span>
+              <p>
+                In the paper's case study, error-aware routing and correction
+                improved robustness with only minimal human intervention,
+                sending 3.3% of assignments to human graders while the rest
+                were handled by GPT-5.1.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>
+          EDU-CIRCUIT-HW was introduced in ACL 2026 Findings as a benchmark for
+          trustworthy MLLM evaluation on authentic student handwritten
+          solutions.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
