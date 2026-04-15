@@ -190,6 +190,17 @@ a {
   color: var(--muted);
 }
 
+.hero-summary,
+.intro-copy p,
+.explorer-intro p,
+.detail-list p,
+.insight-band p {
+  text-align: justify;
+  text-align-last: left;
+  text-wrap: pretty;
+  hyphens: auto;
+}
+
 .hero-summary {
   max-width: 60ch;
   margin: 24px 0 16px;
@@ -333,6 +344,12 @@ a {
   margin: 0;
   line-height: 1.55;
   color: var(--muted);
+}
+
+.hero-metrics p,
+.split-figure figcaption,
+.example-meta p {
+  text-wrap: balance;
 }
 
 .section {
