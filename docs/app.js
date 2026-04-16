@@ -393,7 +393,7 @@ function renderEquationDiff(sourceLine, targetLine) {
       tokenIndex += 1;
     }
 
-    highlightedContent += `\\bbox[border:1.5px solid #b72424,padding:2px]{${diffRun.trim()}}`;
+    highlightedContent += `\\bbox[2px,border:1.5px solid #b72424]{${diffRun.trim()}}`;
   }
 
   return `$$ ${highlightedContent} $$`;
