@@ -38,6 +38,11 @@ const transcriptNoteEl = document.querySelector("#transcript-note");
 const toggleButtons = document.querySelectorAll("[data-transcript-mode]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
 const navSections = document.querySelectorAll("[data-nav-section]");
+const heroCarouselEl = document.querySelector(".hero-carousel");
+const heroSlides = document.querySelectorAll("[data-hero-slide]");
+const heroCaptionKickerEl = document.querySelector("#hero-caption-kicker");
+const heroCaptionTextEl = document.querySelector("#hero-caption-text");
+const heroCarouselButtons = document.querySelectorAll("[data-hero-button]");
 
 const transcriptCache = new Map();
 const transcriptState = {
@@ -46,6 +51,8 @@ const transcriptState = {
 };
 
 let loadSequence = 0;
+let heroSlideIndex = 0;
+let heroCarouselIntervalId = null;
 
 function escapeHtml(text) {
   return text
@@ -338,7 +345,20 @@ function renderInlineDiff(sourceText, targetText) {
   };
 }
 
-function renderEquationDiff(sourceLine, targetLine) {
+function renderInlineDiffWithClass(sourceText, targetText, tokenClassName) {
+  const diff = renderInlineDiff(sourceText, targetText);
+
+  if (!diff.hasDiffTokens || tokenClassName === "diff-token") {
+    return diff;
+  }
+
+  return {
+    html: diff.html.replaceAll('class="diff-token"', `class="${tokenClassName}"`),
+    hasDiffTokens: diff.hasDiffTokens
+  };
+}
+
+function renderEquationDiff(sourceLine, targetLine, bboxStyle) {
   const sourceContent = sourceLine.replace(/^\$\$\s?/, "").replace(/\s?\$\$$/, "");
   const targetContent = (targetLine || "").replace(/^\$\$\s?/, "").replace(/\s?\$\$$/, "");
   const sourceTokens = tokenizeMathContent(sourceContent);
@@ -393,48 +413,61 @@ function renderEquationDiff(sourceLine, targetLine) {
       tokenIndex += 1;
     }
 
-    highlightedContent += `\\bbox[2px,border:1.5px solid #b72424]{${diffRun.trim()}}`;
+    highlightedContent += `\\bbox[${bboxStyle}]{${diffRun.trim()}}`;
   }
 
   return `$$ ${highlightedContent} $$`;
 }
 
-function renderTranscriptLines(lines, lineComparisons = []) {
+function renderTranscriptLines(lines, lineComparisons = [], options = {}) {
+  const {
+    tokenClassName = "diff-token",
+    lineClassName = "line-diff",
+    equationDiffClassName = "",
+    equationBboxStyle = "2px,border:1.5px solid #b72424"
+  } = options;
+
   const html = lines
     .map((line, index) => {
       const comparison = lineComparisons[index] || { changed: false, targetLine: null };
-      const fallbackClassName = comparison.changed ? ' class="line-diff"' : "";
 
       if (/^\$\$.*\$\$$/.test(line)) {
         const equationContent =
           comparison.changed && comparison.targetLine
-            ? renderEquationDiff(line, comparison.targetLine)
+            ? renderEquationDiff(line, comparison.targetLine, equationBboxStyle)
             : line;
-        return `<div class="equation${comparison.changed ? " is-diff" : ""}">${equationContent}</div>`;
+        const equationClasses = ["equation"];
+        if (comparison.changed) {
+          equationClasses.push("is-diff");
+          if (equationDiffClassName) {
+            equationClasses.push(equationDiffClassName);
+          }
+        }
+        return `<div class="${equationClasses.join(" ")}">${equationContent}</div>`;
       }
 
       if (line.startsWith(">")) {
         const sourceContent = line.replace(/^>\s?/, "");
         const targetContent = (comparison.targetLine || "").replace(/^>\s?/, "");
         const diff = comparison.changed
-          ? renderInlineDiff(sourceContent, targetContent)
+          ? renderInlineDiffWithClass(sourceContent, targetContent, tokenClassName)
           : { html: formatInline(sourceContent), hasDiffTokens: false };
-        const className = !diff.hasDiffTokens && comparison.changed ? ' class="line-diff"' : "";
-        return `<blockquote${className}>${diff.html}</blockquote>`;
+        const fallbackClassName = !diff.hasDiffTokens && comparison.changed ? ` class="${lineClassName}"` : "";
+        return `<blockquote${fallbackClassName}>${diff.html}</blockquote>`;
       }
 
       if (/^\*\*.+\*\*$/.test(line)) {
         const diff = comparison.changed
-          ? renderInlineDiff(line, comparison.targetLine || "")
+          ? renderInlineDiffWithClass(line, comparison.targetLine || "", tokenClassName)
           : { html: formatInline(line), hasDiffTokens: false };
-        const className = !diff.hasDiffTokens && comparison.changed ? ' class="line-diff"' : "";
+        const className = !diff.hasDiffTokens && comparison.changed ? ` class="${lineClassName}"` : "";
         return `<h4${className}>${diff.html}</h4>`;
       }
 
       const diff = comparison.changed
-        ? renderInlineDiff(line, comparison.targetLine || "")
+        ? renderInlineDiffWithClass(line, comparison.targetLine || "", tokenClassName)
         : { html: formatInline(line), hasDiffTokens: false };
-      const className = !diff.hasDiffTokens && comparison.changed ? ' class="line-diff"' : "";
+      const className = !diff.hasDiffTokens && comparison.changed ? ` class="${lineClassName}"` : "";
       return `<p${className}>${diff.html}</p>`;
     })
     .join("");
@@ -451,8 +484,8 @@ function syncModeButtons(mode) {
 function updateMeta(example, mode) {
   const sourceLabel =
     mode === "raw"
-      ? "Gemini-2.5-Pro recognition (pre-rectification)"
-      : "Observation set expert rectification";
+      ? "Gemini-2.5-Pro recognition output"
+      : "Expert-rectified observation-set reference";
 
   metaEl.innerHTML = `
     <p><strong>Homework</strong>Homework ${example.homework}</p>
@@ -501,6 +534,66 @@ function initSectionTracking() {
   navSections.forEach((section) => observer.observe(section));
 }
 
+function setHeroSlide(index) {
+  if (!heroSlides.length || !heroCaptionKickerEl || !heroCaptionTextEl) {
+    return;
+  }
+
+  heroSlideIndex = (index + heroSlides.length) % heroSlides.length;
+
+  heroSlides.forEach((slide, slideIndex) => {
+    slide.classList.toggle("is-active", slideIndex === heroSlideIndex);
+  });
+
+  heroCarouselButtons.forEach((button, buttonIndex) => {
+    button.classList.toggle("is-active", buttonIndex === heroSlideIndex);
+  });
+
+  const activeSlide = heroSlides[heroSlideIndex];
+  const activeLayout = activeSlide.dataset.heroLayout || "landscape";
+  heroCarouselEl?.classList.remove("is-landscape", "is-portrait");
+  heroCarouselEl?.classList.add(`is-${activeLayout}`);
+  heroCaptionKickerEl.textContent = activeSlide.dataset.captionKicker || "";
+  heroCaptionTextEl.textContent = activeSlide.dataset.caption || "";
+}
+
+function stopHeroCarousel() {
+  if (heroCarouselIntervalId) {
+    window.clearInterval(heroCarouselIntervalId);
+    heroCarouselIntervalId = null;
+  }
+}
+
+function startHeroCarousel() {
+  if (heroSlides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  stopHeroCarousel();
+  heroCarouselIntervalId = window.setInterval(() => {
+    setHeroSlide(heroSlideIndex + 1);
+  }, 8000);
+}
+
+function initHeroCarousel() {
+  if (!heroCarouselEl || !heroSlides.length) {
+    return;
+  }
+
+  setHeroSlide(0);
+
+  heroCarouselButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setHeroSlide(Number(button.dataset.heroButton || 0));
+      startHeroCarousel();
+    });
+  });
+
+  heroCarouselEl.addEventListener("mouseenter", stopHeroCarousel);
+  heroCarouselEl.addEventListener("mouseleave", startHeroCarousel);
+  startHeroCarousel();
+}
+
 async function typesetMath() {
   if (window.MathJax?.typesetPromise) {
     await window.MathJax.typesetPromise([transcriptEl]);
@@ -530,13 +623,15 @@ async function loadTranscriptData(example) {
   const rawLines = cleanMarkdownLines(rawMarkdown);
   const rectifiedLines = cleanMarkdownLines(rectifiedMarkdown);
   const rawLineComparisons = buildLineComparisons(rawLines, rectifiedLines);
+  const rectifiedLineComparisons = buildLineComparisons(rectifiedLines, rawLines);
 
   const data = {
     rawMarkdown,
     rectifiedMarkdown,
     rawLines,
     rectifiedLines,
-    rawLineComparisons
+    rawLineComparisons,
+    rectifiedLineComparisons
   };
 
   transcriptCache.set(example.id, data);
@@ -565,16 +660,26 @@ async function renderCurrentTranscript() {
   updateMeta(example, transcriptState.mode);
 
   if (transcriptState.mode === "raw") {
-    transcriptTitleEl.textContent = "Gemini-2.5-Pro transcript";
-    transcriptNoteEl.textContent = data.rawLineComparisons.some((item) => item.changed)
-      ? "Red marks highlight mismatched text spans and changed symbol groups in equations."
-      : "This example matches the expert-rectified transcript, so no lines are highlighted.";
-    transcriptEl.innerHTML = renderTranscriptLines(data.rawLines, data.rawLineComparisons);
+    transcriptTitleEl.textContent = "Gemini-2.5-Pro recognized transcript";
+    transcriptNoteEl.innerHTML = data.rawLineComparisons.some((item) => item.changed)
+      ? '<span class="legend-chip legend-chip-red">Red marks</span> highlight model-recognized spans that differ from the expert rectification.'
+      : "This Gemini-2.5-Pro transcript matches the expert rectification for this example.";
+    transcriptEl.innerHTML = renderTranscriptLines(data.rawLines, data.rawLineComparisons, {
+      tokenClassName: "diff-token",
+      lineClassName: "line-diff",
+      equationBboxStyle: "2px,border:1.5px solid #b72424"
+    });
   } else {
     transcriptTitleEl.textContent = "Expert-rectified LaTeX transcript";
-    transcriptNoteEl.textContent =
-      "This is the manually rectified transcript used as the observation-set reference.";
-    transcriptEl.innerHTML = renderTranscriptLines(data.rectifiedLines);
+    transcriptNoteEl.innerHTML = data.rectifiedLineComparisons.some((item) => item.changed)
+      ? '<span class="legend-chip legend-chip-green">Green marks</span> highlight the spans manually corrected by our experts.'
+      : "This observation-set reference required no manual edits for this example.";
+    transcriptEl.innerHTML = renderTranscriptLines(data.rectifiedLines, data.rectifiedLineComparisons, {
+      tokenClassName: "rectified-token",
+      lineClassName: "line-rectified",
+      equationDiffClassName: "equation-diff-rectified",
+      equationBboxStyle: "2px,border:1.5px solid #2f8f4d"
+    });
   }
 
   await typesetMath();
@@ -626,7 +731,7 @@ async function updateExample(exampleId) {
   imageEl.alt = `Homework ${example.homework}, student ${example.student}, question ${example.questionId}`;
   transcriptEl.innerHTML = '<p class="loading-copy">Loading transcript...</p>';
   transcriptTitleEl.textContent =
-    transcriptState.mode === "raw" ? "Gemini-2.5-Pro transcript" : "Expert-rectified LaTeX transcript";
+    transcriptState.mode === "raw" ? "Gemini-2.5-Pro recognized transcript" : "Expert-rectified LaTeX transcript";
   transcriptNoteEl.textContent = "Loading transcript source...";
 
   try {
@@ -651,6 +756,7 @@ async function updateExample(exampleId) {
 
 buildControls();
 initSectionTracking();
+initHeroCarousel();
 
 const initialUrl = new URL(window.location.href);
 const initialExampleId = initialUrl.searchParams.get("example");

@@ -83,6 +83,24 @@
             <a href="https://scholar.google.com/citations?user=slUNmHQAAAAJ&hl=en" target="_blank" rel="noreferrer">Yi Zeng</a>,
             <a href="https://ece.gatech.edu/directory/ying-zhang" target="_blank" rel="noreferrer">Ying Zhang</a>
           </p>
+          <div class="hero-metrics" aria-label="Dataset highlights">
+            <div>
+              <span>1,334</span>
+              <p>authentic handwritten solutions</p>
+            </div>
+            <div>
+              <span>29</span>
+              <p>students from a Spring 2025 circuit course</p>
+            </div>
+            <div>
+              <span>62</span>
+              <p>unique homework questions</p>
+            </div>
+            <div>
+              <span>3.3%</span>
+              <p>human-routing rate in the case study</p>
+            </div>
+          </div>
           <div class="hero-actions">
             <a
               class="primary-link"
@@ -104,30 +122,48 @@
         </div>
 
         <div class="hero-visual">
-          <figure>
-            <img
-              src="./assets/paper/showcase.png"
-              alt="Overview of the EDU-CIRCUIT-HW data format with original handwritten work and expert-verified transcript."
-            />
+          <figure class="hero-carousel" aria-label="Project figure carousel">
+            <div class="hero-carousel-frame">
+              <img
+                class="hero-slide is-active"
+                data-hero-slide
+                data-hero-layout="portrait"
+                data-caption-kicker="Recognition errors and downstream impact"
+                data-caption="Gemini-2.5-Pro recognition errors in visual understanding may remain hidden when grading still succeeds (with loose rubrics), masking underlying failures and overstating MLLM understanding. In our research, we aim to expose all these failures and their potential downstream (auto-grading) impact."
+                src="./assets/paper/figure1_chatbox_hd.svg"
+                alt="Illustration of how MLLM recognition errors on university-level handwritten STEM solutions can propagate into downstream grading."
+              />
+              <img
+                class="hero-slide"
+                data-hero-slide
+                data-hero-layout="portrait"
+                data-caption-kicker="Dataset structure"
+                data-caption="Our released dataset, EDU-CIRCUIT-HW, pairs authentic handwritten solutions with expert-rectified observation-set transcripts, grades, and course metadata for studying recognition fidelity and downstream grading together. Data is collected from a college-level circuit analysis course."
+                src="./assets/paper/data_info_showcase.png"
+                alt="Overview of the EDU-CIRCUIT-HW data format with original handwritten work and expert-verified transcript."
+              />
+            </div>
+            <figcaption class="hero-caption">
+              <p class="hero-caption-kicker" id="hero-caption-kicker">Recognition errors and downstream impact</p>
+              <p class="hero-caption-text" id="hero-caption-text">
+                Adapted from Figure 1 in our paper: Gemini-2.5-Pro recognition errors in visual understanding may remain hidden when grading still succeeds, masking underlying failures and overstating MLLM understanding.
+              </p>
+              <div class="hero-carousel-controls" aria-label="Switch hero figure">
+                <button
+                  type="button"
+                  class="hero-carousel-button is-active"
+                  data-hero-button="0"
+                  aria-label="Show recognition error impact figure"
+                ></button>
+                <button
+                  type="button"
+                  class="hero-carousel-button"
+                  data-hero-button="1"
+                  aria-label="Show dataset structure figure"
+                ></button>
+              </div>
+            </figcaption>
           </figure>
-          <div class="hero-metrics" aria-label="Dataset highlights">
-            <div>
-              <span>1,334</span>
-              <p>authentic handwritten solutions</p>
-            </div>
-            <div>
-              <span>29</span>
-              <p>students from a Spring 2025 circuit course</p>
-            </div>
-            <div>
-              <span>62</span>
-              <p>unique homework questions</p>
-            </div>
-            <div>
-              <span>3.3%</span>
-              <p>human-routing rate in the case study</p>
-            </div>
-          </div>
         </div>
       </header>
 
@@ -135,17 +171,21 @@
         <section class="section explorer-section" id="examples" data-nav-section="examples">
           <div class="section-heading">
             <p class="eyebrow">Interactive Examples</p>
-            <h2>Browse expert-rectified transcripts alongside the original student image.</h2>
+            <h2>Inspect Gemini-2.5-Pro recognition errors and expert corrections alongside the original student image.</h2>
           </div>
 
           <div class="explorer-intro">
-            <p>
-              The examples below are copied from the expert-rectified
-              observation-set annotations. Each example comes from a different
-              homework and a different student, showing the diversity of real
-              student handwriting, symbolic notation, and circuit reasoning in
-              the dataset.
-            </p>
+            <div class="explorer-copy">
+              <p>
+                These examples showcase the recognition behavior of Gemini-2.5-Pro, a visually strong
+                multimodal model, on EDU-CIRCUIT-HW.
+              </p>
+              <p>
+                By contrasting the model-recognized transcript with the expert-rectified version, we expose
+                remaining recognition errors and how experts revise them, highlighting how upstream visual
+                mistakes can introduce unpredictable effects for downstream reasoning and grading.
+              </p>
+            </div>
             <div class="control-cluster">
               <label class="select-label" for="example-select">Question ID</label>
               <select id="example-select" aria-label="Select a question example"></select>
@@ -169,9 +209,10 @@
             <article class="panel transcript-panel">
               <div class="panel-heading transcript-panel-heading">
                 <div>
-                  <p id="transcript-title">Gemini-2.5-Pro transcript</p>
+                  <p id="transcript-title">Gemini-2.5-Pro recognized transcript</p>
                   <p class="transcript-note" id="transcript-note">
-                    Red outlines mark lines that differ from the expert-rectified version.
+                    <span class="legend-chip legend-chip-red">Red marks</span>
+                    highlight model-recognized spans that differ from the expert rectification.
                   </p>
                 </div>
                 <div class="transcript-toggle" aria-label="Switch transcript source">
