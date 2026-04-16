@@ -560,6 +560,53 @@ select {
   color: var(--ink);
 }
 
+.transcript-panel-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.transcript-note {
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.transcript-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: inset 0 0 0 1px rgba(30, 35, 40, 0.08);
+}
+
+.transcript-toggle-button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.transcript-toggle-button:hover,
+.transcript-toggle-button.is-active {
+  background: rgba(171, 93, 43, 0.12);
+  color: var(--ink);
+}
+
 .image-frame,
 .transcript-body {
   border-radius: 28px;
@@ -608,11 +655,11 @@ select {
 }
 
 .transcript-body blockquote {
-  padding: 12px 14px;
-  border-left: 3px solid rgba(171, 93, 43, 0.35);
-  border-radius: 0 14px 14px 0;
-  background: rgba(171, 93, 43, 0.08);
-  color: #43413f;
+  padding: 0;
+  border-left: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
 }
 
 .transcript-body code {
@@ -625,10 +672,29 @@ select {
 
 .transcript-body .equation {
   overflow-x: auto;
-  padding: 14px 16px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.74);
-  box-shadow: inset 0 0 0 1px rgba(30, 35, 40, 0.06);
+  padding: 2px 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.transcript-body .line-diff {
+  padding: 4px 0;
+  border-left: 3px solid rgba(183, 36, 36, 0.45);
+}
+
+.transcript-body .diff-token {
+  padding: 0.05em 0.2em;
+  border: 1.5px solid rgba(183, 36, 36, 0.55);
+  border-radius: 6px;
+  background: rgba(183, 36, 36, 0.05);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.transcript-body .equation.is-diff {
+  padding-bottom: 2px;
+  box-shadow: none;
 }
 
 .loading-copy,
@@ -688,6 +754,11 @@ select {
 
   .transcript-body {
     max-height: none;
+  }
+
+  .transcript-panel-heading {
+    flex-direction: column;
+    align-items: start;
   }
 }
 
@@ -763,5 +834,9 @@ select {
 
   .transcript-body {
     min-height: 360px;
+  }
+
+  .transcript-toggle {
+    flex-wrap: wrap;
   }
 }

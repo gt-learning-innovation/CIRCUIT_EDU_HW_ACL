@@ -17,7 +17,13 @@
     <link rel="stylesheet" href="./styles.css" />
     <script>
       window.MathJax = {
+        loader: {
+          load: ["[tex]/bbox"]
+        },
         tex: {
+          packages: {
+            "[+]": ["bbox"]
+          },
           inlineMath: [
             ["$", "$"],
             ["\\(", "\\)"]
@@ -161,8 +167,21 @@
             </article>
 
             <article class="panel transcript-panel">
-              <div class="panel-heading">
-                <p>Expert-rectified LaTeX transcript</p>
+              <div class="panel-heading transcript-panel-heading">
+                <div>
+                  <p id="transcript-title">Gemini-2.5-Pro transcript</p>
+                  <p class="transcript-note" id="transcript-note">
+                    Red outlines mark lines that differ from the expert-rectified version.
+                  </p>
+                </div>
+                <div class="transcript-toggle" aria-label="Switch transcript source">
+                  <button type="button" class="transcript-toggle-button is-active" data-transcript-mode="raw">
+                    Gemini raw
+                  </button>
+                  <button type="button" class="transcript-toggle-button" data-transcript-mode="rectified">
+                    Expert rectified
+                  </button>
+                </div>
               </div>
               <div class="transcript-body" id="transcript-body">
                 <p class="loading-copy">Loading transcript...</p>
