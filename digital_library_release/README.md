@@ -1,34 +1,36 @@
-# EDU-CIRCUIT-HW Data Package README
+# THE EDU-CIRCUIT-HW DATASET
 
-This README is prepared for the Georgia Tech Digital Library upload of the EDU-CIRCUIT-HW data package.
+EDU-CIRCUIT-HW is an anonymized dataset for studying multimodal handwritten recognition and downstream grading on authentic university-level STEM coursework. The release contains student handwritten circuit-analysis solutions collected from the Spring 2025 offering of an entry-level circuit-analysis course at the Georgia Institute of Technology, together with model-generated transcripts, grading metadata, rubric files, split metadata, and expert-rectified reference transcripts for a subset of samples with identified recognition errors.
 
-## Suggested Item Abstract
+This dataset is officially associated with the ACL 2026 Findings paper, *"EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions"* ([Project Website](https://gt-learning-innovation.github.io/CIRCUIT_EDU_HW_ACL)). For implementation details, evaluation pipelines, and usage guidelines, please visit our [official GitHub repository](https://github.com/gt-learning-innovation/CIRCUIT_EDU_HW_ACL).
 
-EDU-CIRCUIT-HW is an anonymized dataset for studying multimodal handwritten recognition and downstream grading on authentic university-level STEM coursework. The release contains student handwritten circuit-analysis solutions collected from the Spring 2025 offering of ECE 2040 at the Georgia Institute of Technology, together with model-generated transcripts, grading metadata, rubric files, split metadata, and expert-rectified reference transcripts for a subset of samples with identified recognition errors. The package is designed to support research on how visual recognition errors from multimodal large language models propagate into downstream educational tasks such as rubric-based grading and error analysis.
+## Dataset Snapshot
 
-## Suggested Item Description
+The EDU-CIRCUIT-HW dataset includes an observation set used for recognition-error analysis and a test set used for evaluation. The split summary below highlights the released dataset attributes reported in the paper (Table 1), including question coverage, student counts, sample counts, and the availability of verified recognition references and ground-truth grading labels.
 
-This upload contains the data assets associated with the EDU-CIRCUIT-HW project, a benchmark of authentic university-level handwritten circuit-analysis solutions from Georgia Tech's Spring 2025 ECE 2040 course. The package is organized around four top-level directories:
+<p align="center">
+  <img src="./readme_image/split_information.png" alt="EDU-CIRCUIT-HW split summary">
+</p>
 
-1. `Screenshot_output_anon/`
-   Contains the anonymized original student handwritten solution images, organized by homework, student, and question. This directory also includes split metadata (`obsetf_involved_data.csv`, `test_involved_data.csv`, `debug_involved_data.csv`), question-level rubric files in JSON format, grading reports (`obset.xlsx`, `valset1.csv`), and auxiliary manual annotation material used during dataset construction.
+<p align="center"><em>Figure 1: Key attributes of the observation and test sets in EDU-CIRCUIT-HW.</em></p>
 
-2. `Observationset_Final/`
-   Contains multimodal model recognition outputs for the observation subset. Subdirectories are grouped by model version (including Gemini 2.5 Pro, Gemini 3, GPT-5.1, Claude Sonnet 4.5, and Qwen3-VL variants). Each sample folder stores recognized Markdown transcripts (`*_markdown.md`) and the paired source image pages used for transcription (`*_source.png`).
+## Dataset Content Overview
 
-3. `Valset/`
-   Contains model recognition outputs for the held-out evaluation subset, organized in the same per-sample structure as `Observationset_Final/`. In the current release, this directory includes outputs for Gemini 2.5 Pro, Gemini 3, and GPT-5.1.
+The following example illustrates how one instance in our data connects three parts of the release: (1) a student handwritten solution image, (2) an MLLM(Gemini-2.5-Pro)-recognized transcript together with the expert-verified correction, and (3) the official grading report associated with the same question attempt. 
 
-4. `Rectified_recognized_markdown_done_Anon/`
-   Contains expert-rectified Gemini-2.5-Pro transcripts for the subset of observation-set samples that required manual correction after recognition error review. These files serve as the released reference set for recognition-error analysis and human-in-the-loop evaluation. Each corrected sample includes a rectified Markdown transcript and its paired source image page.
+Note: This example is included here only as a schematic overview, and the full data package stores these assets in the directory structure documented below.
 
-The split metadata enumerate 513 observation-set records and 828 held-out evaluation records across 62 unique question IDs. Problem statements are not distributed in this package because they are tied to copyrighted course materials. The dataset collection and release were prepared for research use under the EDU-CIRCUIT-HW project.
+<p align="center">
+  <img src="./readme_image/data_info_showcase.png" alt="Example data linkage across image, transcript, and grading report">
+</p>
+
+<p align="center"><em>Figure 2: An example dataset sample linking handwritten student work, model recognition with expert verification, and official grading metadata.</em></p>
 
 ## Directory Overview
 
-### 1. `Screenshot_output_anon/`
+The package is organized in four top-level directories:
 
-Primary contents:
+### `Screenshot_output_anon/`
 
 - Original anonymized student handwritten solution images in `.png` format
 - Split metadata in `.csv` format
@@ -56,17 +58,15 @@ Screenshot_output_anon/
 Important files:
 
 - `set_splitting/obsetf_involved_data.csv`: observation-set split metadata
-- `set_splitting/test_involved_data.csv`: held-out evaluation split metadata
+- `set_splitting/test_involved_data.csv`: test-set split metadata
 - `manually_checked_TA_label/obset.xlsx`: observation-set grading report
-- `manually_checked_TA_label/valset1.csv`: held-out evaluation grading report
+- `manually_checked_TA_label/valset1.csv`: test-set evaluation grading report
 - `rubric_outputs/P*.json`: question-level rubric definitions
+- `Manual_drawn_recognition_error_onenote_Anon/Anon_Handwritten_for_2040_Part_1 2.one`: some visual illustrations on the MLLM's (Gemini-2.5-Pro) recognition errors (note: these annotatated recognition errors may not reflect all potential recognition errors in these samples, instead, this document just provides some vivid error distribution examples)
 
-### 2. `Observationset_Final/`
+### `Observationset_Final/`
 
-Primary contents:
-
-- Model-recognized transcripts for the observation subset
-- Paired source-image copies used by each model pipeline
+Model-recognized transcripts for the observation subset, with paired source-image copies used by each model pipeline.
 
 Top-level model folders observed in the release:
 
@@ -98,12 +98,9 @@ Notes:
 - File names use underscores in place of dots within question IDs, for example `1_5-2_markdown.md` corresponds to question `P1.5-2`.
 - Multi-page student solutions may appear as indexed files such as `3_6-1_1` and `3_6-1_2`.
 
-### 3. `Valset/`
+### `Valset/`
 
-Primary contents:
-
-- Model-recognized transcripts for the held-out evaluation subset
-- Paired source-image copies used by each model pipeline
+Model-recognized transcripts for the held-out evaluation subset, organized in the same per-sample structure as `Observationset_Final/`.
 
 Top-level model folders observed in the release:
 
@@ -126,12 +123,9 @@ Valset/
                     `-- 3_6-1_source.png
 ```
 
-### 4. `Rectified_recognized_markdown_done_Anon/`
+### `Rectified_recognized_markdown_done_Anon/`
 
-Primary contents:
-
-- Expert-rectified Gemini-2.5-Pro transcripts for a subset of observation-set samples
-- Paired source images for the corrected samples
+Expert-rectified Gemini-2.5-Pro transcripts for a subset of observation-set samples, with paired source images for the corrected samples.
 
 Representative layout:
 
@@ -148,27 +142,29 @@ Rectified_recognized_markdown_done_Anon/
                     `-- 3_2-6_source.png
 ```
 
-Notes:
-
-- This directory is not a full duplicate of the observation set.
-- It contains only the samples that were manually rectified during expert review and are intended to serve as released reference transcripts for recognition-error analysis.
+Notes: **This directory is not a full duplicate of the observation set (v6_Gemini_2p5 folder).** Specifically, any sample present in this folder corresponds to a flawed transcription in the original `Observationset_Final/v6_Gemini_2p5` directory, providing the manually corrected version instead. In contrast, if the initial Gemini-2.5-Pro's transcription in `Observationset_Final/v6_Gemini_2p5` is correct, then this sample will not be included in this directory!
 
 ## File Naming Notes
 
 - Homework folders follow `Homework1`, `Homework2`, etc.
-- Student folders follow `student_2`, `student_31`, etc.
-- Question IDs in image folders generally use dots and parentheses, for example `3.6-1_(1).png`.
-- Question IDs in recognized transcript folders use underscores, for example `3_6-1_1_markdown.md`.
+- Some examples in the `Screenshot_output_anon` folder are not included in the observation set and test set, such as all samples in `Homework 3` due to their extremely complexity, we may keep working on this in future!
+- Student folders use anonymized unique IDs such as `student_2` and `student_31`. These IDs are unique identifiers only and should not be interpreted as a contiguous sequence from 1 to the total number of students.
+- Question IDs in image folders generally use dots and parentheses, for example `3.6-1_(1).png`. While question IDs in recognized transcript folders use underscores, for example `3_6-1_1_markdown.md`.
+- Each question ID in our dataset precisely corresponds to the question with the same Question ID in the textbook [1]. Due to copyright issues, we didn't include the original question statement in this package.
 
-## Important Usage Notes
+[1] James A Svoboda and Richard C Dorf. 2013. Introduction to Electric Circuits (9th Edition). John Wiley & Sons.
 
-- The dataset contains anonymized student work only; no problem statements are included.
-- Question statements are tied to copyrighted course materials and therefore are omitted from the release.
-- The package is intended for research on handwritten STEM solution recognition, recognition-error analysis, and downstream rubric-based grading.
-- When comparing model outputs to expert references, users should treat the rectified transcripts as the released reference subset rather than assume every observation-set sample has a manual correction file.
 
-## Contact / Citation
 
-Project: EDU-CIRCUIT-HW  
-Paper: "Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions"  
-Venue: ACL Findings 2026
+## Citation
+
+If you use this dataset or code, please cite our paper on EDU-CIRCUIT-HW.
+
+```
+@article{sun2026circuit,
+  title={EDU-CIRCUIT-HW: Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions},
+  author={Sun, Weiyu and Chen, Liangliang and Cai, Yongnuo and Xie, Huiru and Zeng, Yi and Zhang, Ying},
+  journal={arXiv preprint arXiv:2602.00095},
+  year={2026}
+}
+```

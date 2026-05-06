@@ -3,6 +3,7 @@
 [![Website](https://img.shields.io/badge/Website-Project%20Page-2ea44f?style=flat-square)](https://gt-learning-innovation.github.io/CIRCUIT_EDU_HW_ACL/)
 [![ArXiv](https://img.shields.io/badge/ArXiv-2602.00095-b31b1b?style=flat-square)](https://arxiv.org/abs/2602.00095)
 [![ACL Findings](https://img.shields.io/badge/ACL%20Findings-2026-8a5cf6?style=flat-square)](https://aclanthology.org/)
+[![Dataset DOI](https://img.shields.io/badge/Dataset%20DOI-10.35090%2Fgatech%2F81252-1f6feb?style=flat-square)](https://doi.org/10.35090/gatech/81252)
 
 This is the official repository for the paper "Evaluating Multimodal Large Language Models on Real-World University-Level STEM Student Handwritten Solutions" (ACL findings 2026).
 
@@ -10,9 +11,19 @@ The project website is available at: [https://gt-learning-innovation.github.io/C
 
 ---
 
+**Update in May 6th** 🔥: The EDU-CIRCUIT-HW dataset is now publicly released at: [https://doi.org/10.35090/gatech/81252](https://doi.org/10.35090/gatech/81252)!!! 🚀 You can extract the zip file downloaded from this link and put the four folders into this project to run the experiment or test your own MLLM. More details are provided within the README.md in this dataset link.
+
+**Update in May 7th** ⚠️: Notice! This project currently only contains MLLM evaluation code without the context of the problem statement (sampled from the textbook [1]) due to copyright issues, which may lead to some performance degradation. If you are purely using this project for research purposes, feel free to contact us for the pre-processed problem statements. 📩
+
+[1] James A Svoboda and Richard C Dorf. 2013. Introduction to Electric Circuits (9th Edition). John Wiley & Sons.
+
+---
+
 ## Quick Start
 
 ## I. Data Structure
+
+The full released dataset package, including the handwritten solution images, model-recognized transcripts, grading metadata, and expert-rectified references described below, is available through the Georgia Tech Digital Library at [https://doi.org/10.35090/gatech/81252](https://doi.org/10.35090/gatech/81252).
 
 The brief illustration of our data is shown as belowing Figure: (1) the original student handwritten resolutions for a specific question and (2) the expert verified full-text transcript of it. Our paper aim to analyze the impact of potential recognition errors for (1) and its downstream influence to the auto-grading task. Finally, we adopte a human-in-the-loop pipeline to make the grading system rebust with minimal human intervention (for only 2-4% of all assignments).
 
