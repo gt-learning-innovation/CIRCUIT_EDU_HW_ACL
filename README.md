@@ -69,6 +69,13 @@ Screenshot_output_anon/set_splitting/
 
 Each CSV file (e.g., `obsetf_involved_data.csv`) lists the Homework ID, Student ID, and Question ID for the corresponding subset.
 
+To be specific, the `1,334` authentic handwritten solutions reported in our paper are the union of two benchmark subsets:
+
+- `Observation set`: `513` samples, specified in `Screenshot_output_anon/set_splitting/obsetf_involved_data.csv`
+- `Test set`: `821` samples, specified in `Screenshot_output_anon/set_splitting/test_involved_data.csv`
+
+Therefore, the original handwritten images are stored in `Screenshot_output_anon/`, while the exact benchmark subset used in our paper is determined by the two split metadata files above rather than by every file under `Screenshot_output_anon/`.
+
 ---
 
 #### 3. Grading Reports & Rubrics
@@ -125,6 +132,8 @@ python batch_wise_handwritting_image_ocr_processing.py \
 ```bash
 python batch_wise_handwritting_image_ocr_processing.py --task_name Test --API_model_name models/gemini-2.5-pro --split_name observation
 ```
+
+When `--split_name observation` is used, the pipeline reads the sample list from `Screenshot_output_anon/set_splitting/obsetf_involved_data.csv`, which contains the `513` observation-set samples in our paper. Likewise, `--split_name test` corresponds to `Screenshot_output_anon/set_splitting/test_involved_data.csv`, which contains the `821` held-out test-set samples. The recognition outputs will then be saved in a structure matching the released benchmark folders such as `Observationset_Final/v6_Gemini_2p5/`.
 
 **Output location:**
 ```
